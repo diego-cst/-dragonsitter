@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_103510) do
     t.string "color"
     t.integer "size"
     t.text "diet"
-    t.integer "temperament"
+    t.integer "temperament", default: 2
     t.boolean "fire"
     t.string "location"
     t.integer "price"
