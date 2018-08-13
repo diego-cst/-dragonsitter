@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Dragons</h1>
+  <div class="row">
+    <% @dragons.each do |dragon| %>
+      <div class="col-xs-12 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+          <h2 class="card-dragon-name">
+            <%= dragon.name %>
+          </h2>
+          <ul class="card-dragon-attributes">
+            <li>
+              <%= dragon.describe_temperament %>
+            </li>
+            <li>
+              <%= dragon.describe_size %>
+            </li>
+          </ul>
+          <h4 class="card-dragon-price">
+            <%= "#{dragon.price} $/night"%>
+          </h4>
+          <%= link_to "", "#", class: "card-dragon-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- add dragon_path(dragon) in the card link:to -->
