@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :dragons, only: [:index]
 
   root to: 'pages#home'
+  resources :profile, only: [:show]
 end

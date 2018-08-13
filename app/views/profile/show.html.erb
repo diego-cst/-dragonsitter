@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>My profile</h1>
+
+  <!-- USER AVATAR -->
+  <%= cl_image_tag @user.photo, class: 'avatar-large' %>
+
+  <!-- USER INFO -->
+  <p>user name: <%= @user.name %></p>
+  <p>user email: <%= @user.email %></p>
+
+  <%= link_to 'Edit my profile', edit_user_registration_path  %>
+</div>
