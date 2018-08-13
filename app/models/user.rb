@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :owned_dragons, class_name: "Dragon"
   has_many :bookings
   has_many :rented_dragons, through: :bookings, source: :dragon
+
+  mount_uploader :photo, PhotoUploader
 end
