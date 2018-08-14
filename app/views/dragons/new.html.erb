@@ -1,13 +1,6 @@
 <div class="container">
   <h2>Register a dragon</h2>
-
   <%= render 'form-dragon', dragon: @dragon %>
-
-<%= simple_form_for @dragon do |f| %>
-  <div class="form-actions">
-    <%= f.button :submit, "Register dragon" %>
-  </div>
-
 </div>
 
 
