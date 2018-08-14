@@ -12,7 +12,8 @@ class DragonsController < ApplicationController
   end
 
   def show
-
+    @booking = Booking.new
+    @photo = @dragon.owner.photo_url
   end
 
   def new

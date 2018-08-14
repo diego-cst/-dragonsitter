@@ -1,0 +1,20 @@
+.button-grey {
+  text-decoration: none;
+  justify-content: center;
+  background-color: #333333;
+  border: 1px solid white;
+  text-align: center;
+  width: 250px;
+  margin: 20px 12px 0 0px;
+  transition: all .5s;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: lighter;
+  padding: 8px;
+  color: white;
+}
+
+.button-grey:hover {
+  background-color: white;
+  color: #333333;
+}
