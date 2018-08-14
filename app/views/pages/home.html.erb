@@ -4,6 +4,13 @@
     <h1>Risk your life!</h1>
     <p>Kill time and potentially yourself by playing with fire</p>
     <%= link_to "Show me beasts!", dragons_path, class:"btn btn-primary" %>
+    <%= form_tag dragons_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a dragon"
+    %>
+<% end %>
   </div>
 </div>
 
