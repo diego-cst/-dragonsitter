@@ -137,14 +137,14 @@ Booking.create!([
     end_date: DateTime.strptime("09/23/2018", "%m/%d/%Y"),
     dragon_id: 2,
     user_id: 1,
-    status: 0
+    status: 1
   },
   {
     start_date: DateTime.strptime("07/19/2018", "%m/%d/%Y"),
     end_date: DateTime.strptime("07/21/2018", "%m/%d/%Y"),
     dragon_id: 3,
     user_id: 4,
-    status: 0
+    status: 2
   },
   {
     start_date: DateTime.strptime("07/19/2018", "%m/%d/%Y"),
@@ -155,6 +155,6 @@ Booking.create!([
   }
 ]);
 
-puts "Seed completed"
+puts "Seed completed: #{Booking.count} bookings created."
 
 

@@ -35,9 +35,8 @@
             </p>
           </div>
           <div class="message-status">
-            <p><%= booking.status %></p>
-            <% number_days = (booking.end_date - booking.start_date).to_i %>
-            <p class="price"><%= number_days * booking.dragon.price %></p>
+            <i class="fas fa-circle" style="color: <%= booking.status_color %>;"> </i>
+            <p class="price"><%= booking.total_price %>€</p>
           </div>
         </li>
         <% end %>
@@ -72,7 +71,7 @@
               <% end %>
             </div>
             <h4 class="card-dragon-price">
-              <%= "#{dragon.price} $/night"%>
+              <%= "#{dragon.price} $/day"%>
             </h4>
             <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
           </div>
@@ -100,16 +99,20 @@
             </h2>
             <ul class="card-dragon-attributes">
               <li>
-                <%= booking.dragon.describe_temperament %>
+                <%= booking.total_duration %> days
               </li>
               <li>
-                <%= booking.dragon.describe_size %>
+                in <%= booking.dragon.location %>
               </li>
             </ul>
             <h4 class="card-dragon-price">
-              <%= "#{booking.dragon.price} $/night"%>
+              <%= booking.total_price%>€
             </h4>
-            <%= link_to "", dragon_path(booking.dragon), class: "card-dragon-link" %>
+            <div class="card-booking-status">
+            <i class="fas fa-circle" style="color: <%= booking.status_color %>;"> </i>
+            </div>
+
+            <%= link_to "", booking_path(booking), class: "card-dragon-link" %>
           </div>
         </div>
         <% end %>
@@ -121,3 +124,4 @@
     </div>
   </div>
 </div>
+
