@@ -98,6 +98,30 @@
 
 // Message inbox design
 
+.tabs {
+  display: flex;
+  align-items: center;
+}
+.tab {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  opacity: 0.3;
+  border-bottom: 5px solid transparent;
+  text-decoration: none;
+  color: black;
+}
+.tab:hover {
+  opacity: 1;
+}
+.tab.active {
+  opacity: 1;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 5px solid #00A699;
+}
+
 .inbox {
   border: 1px solid #dce0e0;
   padding: 0 20px;
@@ -146,7 +170,7 @@
   margin: 6px 0;
 }
 .message-status {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
 }
 .status.accepted {
