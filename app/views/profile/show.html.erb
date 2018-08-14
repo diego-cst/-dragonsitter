@@ -25,8 +25,8 @@
       </ul>
 
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="received"><%= render 'request_received/received' %></div>
-        <div role="tabpanel" class="tab-pane" id="sent"><%= render 'request_sent/sent' %></div>
+        <div role="tabpanel" class="tab-pane active" id="received"><%= render 'request_received/received', request_received: @requests_received %></div>
+        <div role="tabpanel" class="tab-pane" id="sent"><%= render 'request_sent/sent', requests_sent: @requests_sent %></div>
       </div>
       </div>
 
