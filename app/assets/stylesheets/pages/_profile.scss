@@ -124,13 +124,17 @@
 
 .inbox {
   border: 1px solid #dce0e0;
-  padding: 0 20px;
+  padding: 0 5px;
   margin: 0;
 }
+
 .message {
+  display: block;
+}
+
+.message-content {
   display: flex;
   align-items: center;
-  padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
 .message:last-child {
@@ -173,12 +177,19 @@
   font-size: 12px;
   font-weight: bold;
 }
-.status.accepted {
-  color: green;
+
+.message-buttons {
+  display: flex;
 }
-.status.declined {
-  color: red;
-}
-.status.pending {
-  color: orange
+
+.message-buttons .btn {
+  background-color: gray;
+  margin: 5px;
+  border-radius: 10px;
+  color: white;
+  border: solid 1px black;
+  font-size: 10px;
+  &:hover {
+    background-color: blue;
+  }
 }

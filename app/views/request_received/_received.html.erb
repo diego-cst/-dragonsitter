@@ -1,25 +1,31 @@
 <% if !@requests_received.nil? %>
   <ul class="inbox">
     <% @requests_received.each do |request| %>
-    <li class="message">
-      <%= cl_image_tag request.user.photo.url, class: 'avatar-bordered' %>
-      <div class="message-name">
-        <p>Sent by:</p>
-        <p><strong><%= request.user.name %></strong></p>
-      </div>
-      <div class="message-body">
-        <p><strong>Dragon requested: <%= request.dragon.name %></strong></p>
-        <p>
-          from <%= request.start_date %> until <%= request.end_date %>
-        </p>
-      </div>
-      <div class="message-status">
-        <p>Status: <%= request.status %></p>
-        <% number_days = (request.end_date - request.start_date).to_i %>
-        <p class="price">Total amount: <%= number_days * request.dragon.price %>€</p>
-      </div>
-    </li>
-    <% end %>
+      <li class="message">
+        <div class="message-content">
+          <%= cl_image_tag request.user.photo.url, class: 'avatar-bordered' %>
+          <div class="message-name">
+            <p>Sent by: <strong><%= request.user.name %></strong></p>
+            <p>To: <strong>You</strong></p>
+          </div>
+          <div class="message-body">
+            <p><strong>Dragon requested: <%= request.dragon.name %></strong></p>
+            <p>
+              from <%= request.start_date %> until <%= request.end_date %>
+            </p>
+          </div>
+          <div class="message-status">
+            <p>Status: <%= request.status %></p>
+            <% number_days = (request.end_date - request.start_date).to_i %>
+            <p class="price">Total amount: <%= number_days * request.dragon.price %>€</p>
+          </div>
+        </div>
+        <div class="message-buttons">
+          <%= link_to 'Accept request', root_path, class: 'btn' %>
+          <%= link_to 'Decline request', root_path, class: 'btn' %>
+        </div>
+      </li>
+   <% end %>
   </ul>
 <% else %>
   <p>You don't have any received request</p>

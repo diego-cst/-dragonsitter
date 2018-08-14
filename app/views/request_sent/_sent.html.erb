@@ -4,8 +4,8 @@
     <li class="message">
       <%= cl_image_tag request.user.photo.url, class: 'avatar-bordered' %>
       <div class="message-name">
-        <p>Sent by:</p>
-        <p><strong><%= request.user.name %></strong></p>
+        <p>Sent by: <strong>You</strong></p>
+        <p>To: <strong><%= request.dragon.owner.name %></strong></p>
       </div>
       <div class="message-body">
         <p><strong>Dragon requested: <%= request.dragon.name %></strong></p>
