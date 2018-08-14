@@ -14,9 +14,8 @@
         </p>
       </div>
       <div class="message-status">
-        <p>Status: <%= request.status %></p>
-        <% number_days = (request.end_date - request.start_date).to_i %>
-        <p class="price">Total amount: <%= number_days * request.dragon.price %>€</p>
+        <i class="fas fa-circle" style="color: <%= booking.status_color %>;"> </i>
+        <p class="price"><%= booking.total_price %>€</p>
       </div>
     </li>
     <% end %>
