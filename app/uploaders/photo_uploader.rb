@@ -3,5 +3,5 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   def default_public_id
    'user-silhouette.png'
- end
+  end
 end
