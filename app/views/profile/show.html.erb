@@ -19,31 +19,31 @@
       <h2>My messages</h2>
       <% if !@bookings.empty? %>
 
-        <ul class="inbox">
-          <% @bookings.each do |booking| %>
-          <li class="message">
-            <%= cl_image_tag booking.user.photo.url, class: 'avatar-bordered' %>
-            <div class="message-name">
-              <h3><%= booking.user.name %></h3>
-              <p><%= booking.dragon.name %></p>
-              <p>from <%= booking.start_date %> until <%= booking.end_date %></p>
-            </div>
-            <div class="message-body">
-              <p><strong>I wanna rent your dragon!</strong></p>
-              <p>
-                Your dragon is sooooo cooooool, please let me rent it !!!!
-              </p>
-            </div>
-            <div class="message-status">
-              <p><%= booking.status %></p>
-              <% number_days = (booking.end_date - booking.start_date).to_i %>
-              <p class="price"><%= number_days * booking.dragon.price %></p>
-            </div>
-          </li>
-          <% end %>
-        </ul>
+      <ul class="inbox">
+        <% @bookings.each do |booking| %>
+        <li class="message">
+          <%= cl_image_tag booking.user.photo.url, class: 'avatar-bordered' %>
+          <div class="message-name">
+            <h3><%= booking.user.name %></h3>
+            <p><%= booking.dragon.name %></p>
+            <p>from <%= booking.start_date %> until <%= booking.end_date %></p>
+          </div>
+          <div class="message-body">
+            <p><strong>I wanna rent your dragon!</strong></p>
+            <p>
+              Your dragon is sooooo cooooool, please let me rent it !!!!
+            </p>
+          </div>
+          <div class="message-status">
+            <p><%= booking.status %></p>
+            <% number_days = (booking.end_date - booking.start_date).to_i %>
+            <p class="price"><%= number_days * booking.dragon.price %></p>
+          </div>
+        </li>
+        <% end %>
+      </ul>
       <% else %>
-        <p>You don't have any booking request</p>
+      <p>You don't have any booking request</p>
       <% end %>
     </div>
 
@@ -66,12 +66,18 @@
                 <%= dragon.describe_size %>
               </li>
             </ul>
+            <div class="dragon-delete">
+              <%= link_to dragon_path(dragon), method: :delete, data: { confirm: "Are you sure?"} do %>
+              <i class="fa fa-trash destroy_dose"></i>
+              <% end %>
+            </div>
             <h4 class="card-dragon-price">
               <%= "#{dragon.price} $/night"%>
             </h4>
             <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
           </div>
         </div>
+
         <% end %>
       </div>
 
