@@ -1,5 +1,5 @@
 class DragonsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     if params[:query].present?
@@ -23,6 +23,16 @@ class DragonsController < ApplicationController
     @dragon.owner = current_user
     if @dragon.save
       redirect_to dragons_path
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @dragon = Dragon.find(params[:id])
+    @dragon.owner = current_user
+    if @dragon.destroy
+      redirect_to profile_path(@dragon.owner)
     else
       render :new
     end
