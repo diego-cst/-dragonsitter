@@ -1,5 +1,6 @@
 class DragonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_dragon, only: [:show, :edit, :update, :destoy]
 
   def index
     if params[:query].present?
@@ -11,7 +12,7 @@ class DragonsController < ApplicationController
   end
 
   def show
-    @dragon = Dragon.find(params[:id])
+
   end
 
   def new
@@ -28,8 +29,20 @@ class DragonsController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    @dragon.owner = current_user
+    if @dragon.update(dragon_params)
+      redirect_to profile_path(@dragon.owner)
+    else
+      render :new
+    end
+  end
+
   def destroy
-    @dragon = Dragon.find(params[:id])
     @dragon.owner = current_user
     if @dragon.destroy
       redirect_to profile_path(@dragon.owner)
@@ -42,6 +55,10 @@ class DragonsController < ApplicationController
 
   def dragon_params
     params.require(:dragon).permit(:name, :color, :size, :diet, :temperament, :fire, :location, :price, :description, :photo, :photo_cache)
+  end
+
+  def set_dragon
+    @dragon = Dragon.find(params[:id])
   end
 end
 
