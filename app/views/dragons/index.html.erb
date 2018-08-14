@@ -31,7 +31,7 @@
           <h4 class="card-dragon-price">
             <%= "#{dragon.price} $/day"%>
           </h4>
-          <%= link_to "", "#", class: "card-dragon-link" %>
+          <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
         </div>
       </div>
     <% end %>
