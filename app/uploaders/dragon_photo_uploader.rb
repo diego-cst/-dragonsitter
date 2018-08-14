@@ -3,6 +3,6 @@ class DragonPhotoUploader < CarrierWave::Uploader::Base
 
   def default_public_id
    'dinosaur.png'
- end
+  end
 end
 
