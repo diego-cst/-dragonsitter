@@ -98,15 +98,43 @@
 
 // Message inbox design
 
-.inbox {
-  border: 1px solid #dce0e0;
-  padding: 0 20px;
-  margin: 0;
-}
-.message {
+.tabs {
   display: flex;
   align-items: center;
-  padding: 20px;
+}
+.tab {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  opacity: 0.3;
+  border-bottom: 5px solid transparent;
+  text-decoration: none;
+  color: black;
+}
+.tab:hover {
+  opacity: 1;
+}
+.tab.active {
+  opacity: 1;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 5px solid #00A699;
+}
+
+.inbox {
+  border: 1px solid #dce0e0;
+  padding: 0 5px;
+  margin: 0;
+}
+
+.message {
+  display: block;
+}
+
+.message-content {
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
 .message:last-child {
@@ -146,15 +174,22 @@
   margin: 6px 0;
 }
 .message-status {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
 }
-.status.accepted {
-  color: green;
+
+.message-buttons {
+  display: flex;
 }
-.status.declined {
-  color: red;
-}
-.status.pending {
-  color: orange
+
+.message-buttons .btn {
+  background-color: gray;
+  margin: 5px;
+  border-radius: 10px;
+  color: white;
+  border: solid 1px black;
+  font-size: 10px;
+  &:hover {
+    background-color: blue;
+  }
 }

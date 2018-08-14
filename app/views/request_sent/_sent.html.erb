@@ -1,0 +1,26 @@
+<% if !@requests_sent.nil? %>
+  <ul class="inbox">
+    <% @requests_sent.each do |request| %>
+    <li class="message">
+      <%= cl_image_tag request.user.photo.url, class: 'avatar-bordered' %>
+      <div class="message-name">
+        <p>Sent by: <strong>You</strong></p>
+        <p>To: <strong><%= request.dragon.owner.name %></strong></p>
+      </div>
+      <div class="message-body">
+        <p><strong>Dragon requested: <%= request.dragon.name %></strong></p>
+        <p>
+          from <%= request.start_date %> until <%= request.end_date %>
+        </p>
+      </div>
+      <div class="message-status">
+        <i class="fas fa-circle" style="color: <%= booking.status_color %>;"> </i>
+        <p class="price"><%= booking.total_price %>€</p>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+<% else %>
+<%= @request_sent.class %>
+  <p>You don't have any sent request</p>
+<% end %>

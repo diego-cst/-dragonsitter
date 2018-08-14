@@ -1,0 +1,31 @@
+<% if !@requests_received.nil? %>
+  <ul class="inbox">
+    <% @requests_received.each do |request| %>
+      <li class="message">
+        <div class="message-content">
+          <%= cl_image_tag request.user.photo.url, class: 'avatar-bordered' %>
+          <div class="message-name">
+            <p>Sent by: <strong><%= request.user.name %></strong></p>
+            <p>To: <strong>You</strong></p>
+          </div>
+          <div class="message-body">
+            <p><strong>Dragon requested: <%= request.dragon.name %></strong></p>
+            <p>
+              from <%= request.start_date %> until <%= request.end_date %>
+            </p>
+          </div>
+          <div class="message-status">
+            <i class="fas fa-circle" style="color: <%= booking.status_color %>;"> </i>
+            <p class="price"><%= booking.total_price %>€</p>
+          </div>
+        </div>
+        <div class="message-buttons">
+          <%= link_to 'Accept request', root_path, class: 'btn' %>
+          <%= link_to 'Decline request', root_path, class: 'btn' %>
+        </div>
+      </li>
+   <% end %>
+  </ul>
+<% else %>
+  <p>You don't have any received request</p>
+<% end %>
