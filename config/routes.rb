@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :profile, only: [:show]
+  resources :bookings, only: [:show]
 
   root to: 'pages#home'
 end
