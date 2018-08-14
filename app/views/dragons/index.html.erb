@@ -17,15 +17,19 @@
 
       <div class="card-dragon-container">
         <% @dragons.each do |dragon| %>
+
         <% if dragon.id.odd? %>
         <div class="card-dragon-whole-white">
+          <h2 class="card-dragon-name_odd">
+            <%= dragon.name %>
+          </h2>
+          <p><i class="fab fa-d-and-d fa-3x dragon-icon_odd"></i></p>
         </div>
         <% end %>
+
         <div class="card-dragon-whole">
           <div class="card-dragon" style="background-image: url(<%= dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-            <h2 class="card-dragon-name">
-              <%= dragon.name %>
-            </h2>
+
             <ul class="card-dragon-attributes">
               <li>
                 <%= dragon.describe_temperament %>
@@ -40,11 +44,15 @@
             <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
           </div>
         </div>
+
         <% if dragon.id.even? %>
         <div class="card-dragon-whole-white">
+          <h2 class="card-dragon-name_even">
+            <%= dragon.name %>
+          </h2>
+          <p><i class="fab fa-d-and-d fa-3x dragon-icon_even"></i></p>
         </div>
         <% end %>
-
 
         <% end %>
       </div>

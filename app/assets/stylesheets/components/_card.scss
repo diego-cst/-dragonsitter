@@ -2,6 +2,7 @@
   display:flex;
   flex-wrap: wrap;
   overflow: hidden;
+  margin-top: 40px;
 
   // flex-direction:
 }
@@ -9,12 +10,14 @@
 .card-dragon-whole {
   width: 50%;
   position: relative;
+
 }
 
 .card-dragon-whole-white {
   background-color: white;
   width: 50%;
   position: relative;
+  border: 1px solid #e4e4e4;
 }
 
 .card-dragon {
@@ -29,14 +32,35 @@
   text-align: left;
   padding: 0;
 }
-.card-dragon-name {
-  font-size: 24px;
+.card-dragon-name_odd {
   position: absolute;
-  top: 0px;
-  left: 8px;
-  margin-top: 15px !important;
-  font-weight: normal;
+  left: 10px;
 }
+
+.card-dragon-name_even {
+  position: absolute;
+  left: 10px;
+}
+
+.dragon-icon_odd {
+  position: absolute;
+  left: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  top: 80px;
+}
+
+.dragon-icon_even {
+  position: absolute;
+  left: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  top: 80px;
+}
+
+
 .card-dragon-attributes {
   padding: 0px !important;
   font-size: 14px;
@@ -77,6 +101,7 @@
   top: 13px;
   right: 8px;
 }
+
 
 
 
