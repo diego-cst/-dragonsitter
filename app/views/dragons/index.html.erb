@@ -3,7 +3,7 @@
   <div class="row">
     <% @dragons.each do |dragon| %>
       <div class="col-xs-12 col-md-3">
-        <div class="card" style="background-image: dragon.photo_url linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+        <div class="card" style="background-image: url(<%= dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
           <h2 class="card-dragon-name">
             <%= dragon.name %>
           </h2>
