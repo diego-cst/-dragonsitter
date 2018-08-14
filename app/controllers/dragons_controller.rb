@@ -4,6 +4,7 @@ class DragonsController < ApplicationController
   def index
     if params[:query].present?
       @dragons = Dragon.where('location ILIKE ?', "#{params[:query]}")
+      @query = params[:query]
     else
       @dragons = Dragon.all
     end
