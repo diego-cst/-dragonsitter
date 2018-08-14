@@ -22,20 +22,21 @@
         <ul class="inbox">
           <% @bookings.each do |booking| %>
           <li class="message">
-            <%= cl_image_tag(booking.user.photo) %>
+            <%= cl_image_tag booking.user.photo, class: 'avatar-bordered' %>
             <div class="message-name">
               <h3><%= booking.user.name %></h3>
+              <p><%= booking.dragon.name %></p>
               <p>from <%= booking.start_date %> until <%= booking.end_date %></p>
             </div>
             <div class="message-body">
-              <p><strong>I am not sure yet!</strong></p>
+              <p><strong>I wanna rent your dragon!</strong></p>
               <p>
-                I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+                Your dragon is sooooo cooooool, please let me rent it !!!!
               </p>
             </div>
             <div class="message-status">
               <p><%= booking.status %></p>
-              <% number_days = end_date - start_date %>
+              <% number_days = (booking.end_date - booking.start_date).to_i %>
               <p class="price"><%= number_days * booking.dragon.price %></p>
             </div>
           </li>
@@ -48,10 +49,10 @@
 
     <div class="user-owned-dragons">
       <h2>My dragons</h2>
-      <% if @dragons_owned %>
+      <% if @owned_dragons %>
 
       <div class="row">
-        <% @dragons_owned.each do |dragon| %>
+        <% @owned_dragons.each do |dragon| %>
         <div class="col-xs-12 col-md-3">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
             <h2 class="card-dragon-name">
@@ -89,18 +90,18 @@
         <div class="col-xs-12 col-md-3">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
             <h2 class="card-dragon-name">
-              <%= dragon.name %>
+              <%= booking.dragon.name %>
             </h2>
             <ul class="card-dragon-attributes">
               <li>
-                <%= dragon.describe_temperament %>
+                <%= booking.dragon.describe_temperament %>
               </li>
               <li>
-                <%= dragon.describe_size %>
+                <%= booking.dragon.describe_size %>
               </li>
             </ul>
             <h4 class="card-dragon-price">
-              <%= "#{dragon.price} $/night"%>
+              <%= "#{booking.dragon.price} $/night"%>
             </h4>
             <%= link_to "", "#", class: "card-dragon-link" %>
           </div>
