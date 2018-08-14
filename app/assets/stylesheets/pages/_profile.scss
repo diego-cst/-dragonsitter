@@ -1,0 +1,160 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 400px 400px 400px;
+}
+
+.user-info {
+  background-color: white;
+  border: solid 1px gray;
+  border-radius: 3px;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 2;
+  margin: 5px;
+  padding: 10px;
+}
+
+.user-message {
+  background-color: white;
+  border: solid 1px gray;
+  border-radius: 3px;
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 3;
+  margin: 5px;
+  padding: 10px;
+}
+
+.user-owned-dragons {
+  background-color: white;
+  border: solid 1px gray;
+  border-radius: 3px;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 5;
+  margin: 5px;
+  padding: 10px;
+}
+
+.user-bookings {
+  background-color: white;
+  border: solid 1px gray;
+  border-radius: 3px;
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 5;
+  margin: 5px;
+  padding: 10px;
+}
+
+
+// Grid display for mobile devices and smaller screen
+
+@media(max-width: 720px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px 400px 400px 400px;
+  }
+
+  .user-info {
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 3px;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .user-message {
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 3px;
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .user-owned-dragons {
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 3px;
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .user-bookings {
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 3px;
+    grid-row: 4 / span 1;
+    grid-column: 1 / span 1;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+}
+
+
+// Message inbox design
+
+.inbox {
+  border: 1px solid #dce0e0;
+  padding: 0 20px;
+  margin: 0;
+}
+.message {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+.message:last-child {
+  border-bottom: none;
+}
+.message-body {
+  flex-grow: 1;
+}
+.message-name {
+  padding-left: 10px;
+  min-width: 100px;
+}
+.message-name h3 {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+.message-name p {
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+.message-body {
+  padding-left: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+.message-body {
+  padding-left: 20px;
+  color: rgba(0,0,0,0.4);
+}
+.message-body strong{
+  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.9);
+}
+.message-body p {
+  margin: 6px 0;
+}
+.message-status {
+  font-size: 14px;
+  font-weight: bold;
+}
+.status.accepted {
+  color: green;
+}
+.status.declined {
+  color: red;
+}
+.status.pending {
+  color: orange
+}
