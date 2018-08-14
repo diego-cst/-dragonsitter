@@ -1,0 +1,24 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path "grey.jpg" %>);">
+  <div class="banner-content">
+    <h1 class="btn btn-success">View photos</h1>
+  </div>
+</div>
+
+
+<div class="dragon-show-wrapper">
+  <div class="container">
+    <div class="dragon-show-info-card col-xs-12 col-md-6">
+      <h3><%= @dragon.name %></h3>
+      <p> <%= @dragon.location %>, <%= @dragon.price %>€</p>
+      <ul>
+        <p>Threat level: </p>
+        <li>Temperament: <%= @dragon.temperament %></li>
+        <li>Firebreather? <%= @dragon.fire %></li>
+      </ul>
+    </div>
+    <div class="dragon-show-description col-xs-12">
+      <p><%=  @dragon.description %></p>
+    </div>
+  </div>
+</div>
+
