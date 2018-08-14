@@ -3,7 +3,16 @@
   <div class="home-banner-content">
     <h1>Risk your life!</h1>
     <p>Kill time and potentially yourself by playing with fire</p>
-    <%= link_to "Show me beasts!", dragons_path, class:"btn btn-primary" %>
+    <div class="home-search-form">
+      <%= form_tag dragons_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "input-search",
+      placeholder: "Type a location.."%>
+      <button name="button" type="submit" class="button-white">Search
+      </button>
+      <% end %>
+    </div>
   </div>
 </div>
 

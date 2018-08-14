@@ -1,6 +1,19 @@
 <div class="container">
-  <h1>Dragons</h1>
   <div class="row">
+
+<!-- Changes the title of the page according to the results (with location name, or empty) -->
+  <% if @query.present? && !@dragons.empty? %>
+    <h2><%= "Dragons in #{@query.capitalize}" %></h2>
+    <% elsif @dragons.empty? %>
+      <div class="empty-search-results col-xs-12 col-md-4 col-md-offset-4">
+        <h2>No dragons here!</h2>
+        <%= image_tag "search.jpg" %>
+      </div>
+    <% else %>
+    <h2> Dragons </h2>
+  <% end %>
+
+<!-- Displays all the dragons in cards -->
     <% @dragons.each do |dragon| %>
       <div class="col-xs-12 col-md-3">
         <div class="card" style="background-image: url(<%= dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
@@ -16,13 +29,15 @@
             </li>
           </ul>
           <h4 class="card-dragon-price">
-            <%= "#{dragon.price} $/night"%>
+            <%= "#{dragon.price} $/day"%>
           </h4>
-          <%= link_to "", "#", class: "card-dragon-link" %>
+          <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
         </div>
       </div>
     <% end %>
+
   </div>
 </div>
 
-<!-- add dragon_path(dragon) in the card link:to -->
+
+

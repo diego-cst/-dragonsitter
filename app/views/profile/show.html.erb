@@ -29,7 +29,6 @@
         <div role="tabpanel" class="tab-pane" id="sent"><%= render 'request_sent/sent', requests_sent: @requests_sent %></div>
       </div>
       </div>
-
     </div>
 
     <div class="user-owned-dragons">
@@ -51,12 +50,18 @@
                 <%= dragon.describe_size %>
               </li>
             </ul>
+            <div class="dragon-delete">
+              <%= link_to dragon_path(dragon), method: :delete, data: { confirm: "Are you sure?"} do %>
+              <i class="fa fa-trash destroy_dose"></i>
+              <% end %>
+            </div>
             <h4 class="card-dragon-price">
-              <%= "#{dragon.price} $/night"%>
+              <%= "#{dragon.price} $/day"%>
             </h4>
-            <%= link_to "", "#", class: "card-dragon-link" %>
+            <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
           </div>
         </div>
+
         <% end %>
       </div>
 
@@ -79,16 +84,20 @@
             </h2>
             <ul class="card-dragon-attributes">
               <li>
-                <%= booking.dragon.describe_temperament %>
+                <%= booking.total_duration %> days
               </li>
               <li>
-                <%= booking.dragon.describe_size %>
+                in <%= booking.dragon.location %>
               </li>
             </ul>
             <h4 class="card-dragon-price">
-              <%= "#{booking.dragon.price} $/night"%>
+              <%= booking.total_price%>€
             </h4>
-            <%= link_to "", "#", class: "card-dragon-link" %>
+            <div class="card-booking-status">
+            <i class="fas fa-circle" style="color: <%= booking.status_color %>;"> </i>
+            </div>
+
+            <%= link_to "", booking_path(booking), class: "card-dragon-link" %>
           </div>
         </div>
         <% end %>
@@ -100,3 +109,4 @@
     </div>
   </div>
 </div>
+
