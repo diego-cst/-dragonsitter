@@ -1,7 +1,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 100vh;
+  height: 70vh;
   background-size: cover !important;
   display: relative;
 }
@@ -13,4 +13,10 @@
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   left: 10px;
   bottom: 215px;
+}
+
+.banner-content {
+  position: absolute;
+  left: 10px;
+  bottom: 200px;
 }
