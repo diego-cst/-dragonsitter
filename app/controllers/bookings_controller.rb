@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
   end
 
   def set_dragon
-    @dragon = Dragon.find(params[dragon_id])
+    @dragon = Dragon.find(params[:dragon_id])
   end
 
 end
