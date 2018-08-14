@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 400px 400px 400px;
+}
+
+.user-info {
+  background-color: red;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 2;
+}
+
+.user-message {
+  background-color: green;
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 3;
+}
+
+.user-owned-dragons {
+  background-color: yellow;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 5;
+}
+
+.user-bookings {
+  background-color: blue;
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 5;
+}

@@ -1,12 +1,30 @@
+<!-- NOTE: this page is diplayed as a grid -->
 <div class="container">
-  <h1>My profile</h1>
+    <h1>My profile</h1>
 
-  <!-- USER AVATAR -->
-  <%= cl_image_tag @user.photo, class: 'avatar-large' %>
+<div class="grid">
+  <div class="user-info">
+    <h2>My personal info</h2>
+    <!-- USER AVATAR -->
+    <%= cl_image_tag @user.photo, class: 'avatar-large' %>
 
-  <!-- USER INFO -->
-  <p>user name: <%= @user.name %></p>
-  <p>user email: <%= @user.email %></p>
+    <!-- USER INFO -->
+    <p>user name: <%= @user.name %></p>
+    <p>user email: <%= @user.email %></p>
 
-  <%= link_to 'Edit my profile', edit_user_registration_path  %>
+    <%= link_to 'Edit my profile', edit_user_registration_path  %>
+  </div>
+
+<div class="user-message">
+  <h2>My messages</h2>
+</div>
+
+  <div class="user-owned-dragons">
+<h2>My dragons</h2>
+  </div>
+
+  <div class="user-bookings">
+    <h2>My bookings</h2>
+  </div>
+</div>
 </div>
