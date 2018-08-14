@@ -2,7 +2,12 @@ class DragonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new]
 
   def index
-    @dragons = Dragon.all
+    if params[:query].present?
+      @dragons = Dragon.where('location ILIKE ?', "#{params[:query]}")
+      @query = params[:query]
+    else
+      @dragons = Dragon.all
+    end
   end
 
   def show
