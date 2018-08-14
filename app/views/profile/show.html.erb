@@ -6,7 +6,7 @@
     <div class="user-info">
       <h2>My personal info</h2>
       <!-- USER AVATAR -->
-      <%= cl_image_tag @user.photo, class: 'avatar-large' %>
+      <%= cl_image_tag @user.photo_url, class: 'avatar-large' %>
 
       <!-- USER INFO -->
       <p>user name: <%= @user.name %></p>
@@ -22,7 +22,7 @@
         <ul class="inbox">
           <% @bookings.each do |booking| %>
           <li class="message">
-            <%= cl_image_tag booking.user.photo, class: 'avatar-bordered' %>
+            <%= cl_image_tag booking.user.photo.url, class: 'avatar-bordered' %>
             <div class="message-name">
               <h3><%= booking.user.name %></h3>
               <p><%= booking.dragon.name %></p>
@@ -54,7 +54,7 @@
       <div class="row">
         <% @owned_dragons.each do |dragon| %>
         <div class="col-xs-12 col-md-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+          <div class="card" style="background-image: url(<%= dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
             <h2 class="card-dragon-name">
               <%= dragon.name %>
             </h2>
@@ -88,7 +88,7 @@
       <div class="row">
         <% @bookings.each do |booking| %>
         <div class="col-xs-12 col-md-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+          <div class="card" style="background-image: url(<%= booking.dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
             <h2 class="card-dragon-name">
               <%= booking.dragon.name %>
             </h2>
