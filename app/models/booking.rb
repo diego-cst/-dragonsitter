@@ -4,9 +4,14 @@ class Booking < ApplicationRecord
   validates :start_date, :end_date, presence: true
   validates :status, inclusion: {in: (0..2)}
 
+  def total_duration
+    duration = self.end_date - self.start_date
+    duration.to_i
+  end
+
   def total_price
     dragon_price = self.dragon.price
-    duration = self.end_date - self.start_date
+    duration = self.total_duration
     price = dragon_price * duration
   end
 
