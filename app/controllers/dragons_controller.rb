@@ -10,14 +10,16 @@ class DragonsController < ApplicationController
   end
 
   def new
-    @dragon = Dragon.new(dragon_params)
+    @dragon = Dragon.new
   end
 
-  private
+  # To be used for create:
 
-  def dragon_params
-    params.require(:dragon).permit(:name, :color, :size, :diet, :temperament, :fire, :location, :price, :description, :photo)
-  end
+  # private
+
+  # def dragon_params
+  #   params.require(:dragon).permit(:name, :color, :size, :diet, :temperament, :fire, :location, :price, :description, :photo)
+  # end
 end
 
 
