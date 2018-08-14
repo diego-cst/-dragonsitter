@@ -9,6 +9,8 @@ class Dragon < ApplicationRecord
   validates :temperament, inclusion: {in: (0..4)}
   validates :size, inclusion: {in: (0..4)}
 
+  mount_uploader :photo, DragonPhotoUploader
+
   def describe_temperament
     case self.temperament
     when 0
