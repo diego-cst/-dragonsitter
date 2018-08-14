@@ -1,6 +1,6 @@
 class Dragon < ApplicationRecord
   belongs_to :owner, class_name: "User", foreign_key: "user_id"
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :renters, through: :bookings, source: :user
 
   validates :name, presence: true
