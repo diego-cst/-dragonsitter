@@ -1,8 +1,8 @@
 .button-grey {
   text-decoration: none;
   justify-content: center;
-  background-color: #333333;
-  border: 1px solid white;
+  background-color: transparent;
+  border: 1px solid #333333;
   text-align: center;
   width: 250px;
   margin: 20px 12px 0 0px;
@@ -11,10 +11,27 @@
   border-radius: 3px;
   font-weight: lighter;
   padding: 8px;
-  color: white;
+  color: #333333
 }
 
 .button-grey:hover {
   background-color: white;
+  background-color: #333333;
+  color: white;
+  .edit-button {
+    color: white;
+  }
+}
+
+.edit-button {
+  text-decoration: none;
   color: #333333;
 }
+
+.edit-button:hover {
+  text-decoration: none;
+  color: white;
+
+}
+
+
