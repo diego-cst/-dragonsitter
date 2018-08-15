@@ -19,6 +19,7 @@
       <h2 class="card-dragon-name_odd">
         <%= dragon.name %>
       </h2>
+      <p class="card-dragon-description"><%= dragon.description.truncate_words(20) %></p>
       <ul class="card-dragon-attributes">
         <li>
           <%= dragon.describe_temperament %>
@@ -28,7 +29,7 @@
         </li>
       </ul>
       <h4 class="card-dragon-price">
-        <%= "#{dragon.price} $/day"%>
+        <%= "#{dragon.price} €/day"%>
       </h4>
       <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
     </div>
@@ -45,6 +46,7 @@
       <h2 class="card-dragon-name_even">
         <%= dragon.name %>
       </h2>
+      <p class="card-dragon-description"><%= dragon.description.truncate_words(20) %></p>
       <ul class="card-dragon-attributes">
         <li>
           <%= dragon.describe_temperament %>
@@ -54,7 +56,7 @@
         </li>
       </ul>
       <h4 class="card-dragon-price">
-        <%= "#{dragon.price} $/day"%>
+        <%= "#{dragon.price} €/day"%>
       </h4>
       <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
     </div>
