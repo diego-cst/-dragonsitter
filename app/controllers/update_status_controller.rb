@@ -2,7 +2,7 @@ class UpdateStatusController < ApplicationController
 
   def confirm_booking
     @booking = Booking.find(params[:booking_id])
-    @booking.status = 1
+    @booking.confirmed!
     if @booking.save!
       redirect_to profile_path(current_user)
     else
@@ -12,7 +12,7 @@ class UpdateStatusController < ApplicationController
 
   def refuse_booking
     @booking = Booking.find(params[:booking_id])
-    @booking.status = 2
+    @booking.declined!
     if @booking.save!
       redirect_to profile_path(current_user)
     else

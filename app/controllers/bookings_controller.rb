@@ -8,18 +8,31 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = @user
     @booking.dragon = @dragon
-    @booking.status = "pending"
-    if @booking.save
-      redirect_to(booking_path(@booking))
+    unless @dragon.owner == current_user
+      @booking.user = @user
+      @booking.status = "pending"
+      if @booking.save
+        redirect_to(booking_path(@booking))
+      else
+        render "dragons/show"
+      end
     else
-      render "dragons/show"
+      render "dragons/show", notice: "it's yours!"
     end
   end
 
   def show
     @booking = Booking.find(params[:id])
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.destroy
+      redirect_to profile_path(current_user)
+    else
+      render :new
+    end
   end
 
   private

@@ -28,7 +28,7 @@
       </div>
 
       <div class="booking-box col-xs-12 col-md-4">
-        <% if @dragon.booked_by?(current_user) %>
+        <% if current_user && @dragon.booked_by?(current_user) %>
           <div class="dragon-show-confirmation">
             <i class="fas fa-check-circle"></i>
           </div>
