@@ -1,15 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-    <h2>Your booking for <%= @booking.dragon.name %></h2>
+      <div class="show-booking-heading">
+        <i class="show-booking-icon fas fa-check-circle"></i>
+        <h2>Your booking for <%= @booking.dragon.name %>:</h2>
+      </div>
     </div>
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-    <h3>From: <%= @booking.start_date %></h3>
-    <h3>To: <%= @booking.end_date %></h3>
-    <h3>In <%= @booking.dragon.location %></h3>
-    <h3>Status: <%= @booking.status %></h3>
-    <%= link_to "Edit booking", "#", class: "btn" %>
-    <%= link_to "Cancel booking", "#", class: "btn" %>
+      <div class="show-booking-details">
+        <h4>From: <%= @booking.start_date %></h4>
+        <h4>for <%= @booking.total_duration %> days</h4>
+        <h4>In <%= @booking.dragon.location %></h4>
+        <h4>Status: <%= @booking.status %></h4>
+        <h4>Total: <%= @booking.total_price %>€</h4>
+      </div>
+      <div class="show-booking-bottom">
+        <%= link_to "Manage my bookings", profile_path(current_user), class: "btn" %>
+        <%= link_to "Back to #{@booking.dragon.name}", dragon_path(@booking.dragon), class: "btn btn-primary"%>
+      </div>
     </div>
   </div>
 </div>

@@ -20,7 +20,7 @@ class Dragon < ApplicationRecord
     when 2
       return "Docile"
     when 3
-      return "Insatible"
+      return "Insatiable"
     when 4
       return "Ferocious"
     end
@@ -42,7 +42,7 @@ class Dragon < ApplicationRecord
   end
 
   def booked_by?(user)
-    renters.where(id: user.id).present?
+    renters.where(id: user.id).present? if !user.nil?
   end
 
 end

@@ -50,7 +50,7 @@
 }
 .dragon-delete {
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   right: 10px;
   z-index: 3;
 }
@@ -58,4 +58,11 @@
   position: absolute;
   top: 13px;
   right: 8px;
+}
+
+.booking-delete {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3;
 }

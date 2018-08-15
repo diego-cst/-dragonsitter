@@ -33,11 +33,13 @@
     </div>
 
     <div class="user-owned-dragons", style="overflow-y:scroll;">
+
       <div class="user-owned-dragons-heading">
         <h3>My dragons</h3>
         <%= link_to 'Add a new dragon', new_dragon_path, class: 'edit-button button-grey'  %>
       </div>
-      <% if @owned_dragons %>
+      <% if !@owned_dragons.empty? %>
+
       <div class="row">
         <% @owned_dragons.each do |dragon| %>
         <div class="col-xs-12 col-md-3">
@@ -69,7 +71,7 @@
       </div>
 
       <% else %>
-      <p>You don't have any dragons</p>
+      <p>You don't have any dragon</p>
       <% end %>
     </div>
 
@@ -93,6 +95,11 @@
                 in <%= booking.dragon.location %>
               </li>
             </ul>
+            <div class="booking-delete">
+              <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} do %>
+              <i class="fa fa-trash destroy_dose"></i>
+              <% end %>
+            </div>
             <h4 class="card-dragon-price">
               <%= booking.total_price%>€
             </h4>
