@@ -1,13 +1,19 @@
 class Dragon < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   belongs_to :owner, class_name: "User", foreign_key: "user_id"
   has_many :bookings, dependent: :destroy
   has_many :renters, through: :bookings, source: :user
+
+
 
   validates :name, presence: true
   validates :price, presence: true
   validates :price, numericality: { only_integer: true }
   validates :temperament, inclusion: {in: (0..4)}
   validates :size, inclusion: {in: (0..4)}
+
 
   mount_uploader :photo, DragonPhotoUploader
 

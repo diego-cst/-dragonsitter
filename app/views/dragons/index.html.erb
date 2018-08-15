@@ -64,9 +64,11 @@
   <% end %>
   <% end %>
 </div>
-<div class="map-dragon">
-<%= image_tag 'grey.jpg' %>
-
+<div class="map-dragon", id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>">
+  <%= image_tag 'grey.jpg' %>
 </div>
 
 </div>
