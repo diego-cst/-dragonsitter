@@ -4,19 +4,20 @@
 
   <div class="grid">
     <div class="user-info">
-      <h2>My personal info</h2>
       <!-- USER AVATAR -->
       <%= cl_image_tag @user.photo_url, class: 'avatar-large' %>
 
-      <!-- USER INFO -->
-      <p>user name: <%= @user.name %></p>
-      <p>user email: <%= @user.email %></p>
+      <div class="space-between"></div>
 
-      <%= link_to 'Edit my profile', edit_user_registration_path  %>
+      <!-- USER INFO -->
+      <p><%= @user.name %></p>
+      <p><%= @user.email %></p>
+
+      <button name="button" type="submit" class="button-grey"><%= link_to 'Edit my profile', edit_user_registration_path, class: "edit-button"  %></button>
     </div>
 
-    <div class="user-message">
-      <h2>My messages</h2>
+    <div class="user-message" style="overflow-y:scroll;">
+      <h3>Messages (<%= @requests_received.length + @requests_sent.length %>)</h3>
 
       <div class="box-tab">
         <ul class="nav nav-tabs" role="tablist">
@@ -32,7 +33,7 @@
     </div>
 
     <div class="user-owned-dragons", style="overflow-y:scroll;">
-      <h2>My dragons</h2>
+      <h3>My dragons</h3>
       <% if @owned_dragons %>
 
       <div class="row">
@@ -71,14 +72,14 @@
     </div>
 
     <div class="user-bookings" style="overflow-y:scroll;">
-      <h2>My bookings</h2>
+      <h3>My bookings</h3>
 
       <% if !@bookings.empty? %>
 
       <div class="row">
         <% @bookings.each do |booking| %>
         <div class="col-xs-12 col-md-3">
-          <div class="card" style="background-image: url(<%= booking.dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+          <div class="card" style="background-image: url(<%= booking.dragon.photo_url %>)">
             <h2 class="card-dragon-name">
               <%= booking.dragon.name %>
             </h2>
