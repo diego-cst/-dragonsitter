@@ -12,7 +12,7 @@
       <div class="dragon-show-info-card col-xs-12 col-md-8">
         <div class="dragon-name-user-profile">
         <h3><%= @dragon.name %></h3>
-        <%= cl_image_tag @photo, class: 'avatar' %>
+        <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar' %>
         </div>
         <p> <%= @dragon.location %> </p>
         <ul class="dragon-attributes">
