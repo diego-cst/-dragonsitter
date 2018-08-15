@@ -1,6 +1,6 @@
 class DragonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_dragon, only: [:show, :edit, :update, :destoy]
+  before_action :set_dragon, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:query].present?
