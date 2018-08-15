@@ -1,0 +1,102 @@
+.card-dragon-container {
+  display:flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin-top: 40px;
+
+  // flex-direction:
+}
+
+.card-dragon-whole {
+  width: 50%;
+  position: relative;
+
+}
+
+.card-dragon-whole-white {
+  background-color: white;
+  width: 50%;
+  position: relative;
+  border: 1px solid #e4e4e4;
+}
+
+.card-dragon {
+  height: 325px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin: 0;
+  border-radius: 1px;
+  text-align: left;
+  padding: 0;
+}
+.card-dragon-name_odd {
+  position: absolute;
+  left: 10px;
+}
+
+.card-dragon-name_even {
+  position: absolute;
+  left: 10px;
+}
+
+.dragon-icon_odd {
+  position: absolute;
+  left: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  top: 80px;
+}
+
+.dragon-icon_even {
+  position: absolute;
+  left: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  top: 80px;
+}
+
+
+.card-dragon-attributes {
+  padding: 0px !important;
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+.card-dragon-price{
+  font-size: 18px;
+  position: absolute;
+  bottom: 30px;
+  right: 8px;
+}
+.card-dragon-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+
+  &:hover {
+  opacity: 0.1;
+  }
+}
+
+.card-booking-status {
+  position: absolute;
+  top: 13px;
+  right: 8px;
+}
+
+
+
+
