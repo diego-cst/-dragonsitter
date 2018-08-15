@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="user-owned-dragons">
+    <div class="user-owned-dragons", style="overflow-y:scroll;">
       <h2>My dragons</h2>
       <% if @owned_dragons %>
 
@@ -70,7 +70,7 @@
       <% end %>
     </div>
 
-    <div class="user-bookings">
+    <div class="user-bookings" style="overflow-y:scroll;">
       <h2>My bookings</h2>
 
       <% if !@bookings.empty? %>
