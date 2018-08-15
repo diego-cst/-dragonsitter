@@ -10,12 +10,14 @@
   <%= image_tag "search.jpg" %>
 </div>
 <% else %>
-<h2 class="dragons-title-index"> Find your Dragon! </h2>
+
 <% end %>
 
 <!-- Displays all the dragons in cards -->
 <div class="cover-all-container">
+
 <div class="card-dragon-container">
+    <h3 class="dragons-title-index"> Dragons for rent </h3>
   <% @dragons.each do |dragon| %>
   <% if dragon.id.odd? %>
   <div class="card-dragon-whole-white_odd">

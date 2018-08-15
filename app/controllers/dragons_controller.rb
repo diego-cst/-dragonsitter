@@ -67,7 +67,7 @@ end
 private
 
 def dragon_params
-  params.require(:dragon).permit(:name, :color, :size, :diet, :temperament, :fire, :location, :price, :description, :photo, :photo_cache)
+  params.require(:dragon).permit(:name, :color, :size, :diet, :temperament, :fire, :address, :price, :description, :photo, :photo_cache)
 end
 
 def set_dragon
