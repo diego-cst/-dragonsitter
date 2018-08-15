@@ -1,12 +1,16 @@
 .dragons-title-index {
   font-size: 56px;
   font-weight: lighter;
-  margin-left: 25%;
+  margin-left: 3%;
+  margin-top: 0;
+  padding-bottom: 35px;
 }
 
 .map-dragon {
-  width: 35%;
+  width: 45% !important;
   height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
 }
 
 .cover-all-container {

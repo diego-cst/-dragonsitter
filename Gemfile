@@ -35,3 +35,5 @@ end
 # lewagon gems
 
 gem 'devise'
+gem 'geocoder'
+

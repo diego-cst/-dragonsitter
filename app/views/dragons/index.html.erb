@@ -7,11 +7,39 @@
   <%= image_tag "search.jpg" %>
 </div>
 <% else %>
-<h2 class="dragons-title-index"> Find your Dragon! </h2>
+
 <% end %>
 
 <!-- Displays all the dragons in cards -->
 <div class="cover-all-container">
+<<<<<<< HEAD
+
+<div class="card-dragon-container">
+    <h3 class="dragons-title-index"> Dragons for rent </h3>
+  <% @dragons.each do |dragon| %>
+  <% if dragon.id.odd? %>
+  <div class="card-dragon-whole-white_odd">
+    <h2 class="card-dragon-name_odd">
+      <%= dragon.name %>
+    </h2>
+    <ul class="card-dragon-attributes">
+      <li>
+        <%= dragon.describe_temperament %>
+      </li>
+      <li>
+        <%= dragon.describe_size %>
+      </li>
+    </ul>
+    <h4 class="card-dragon-price">
+      <%= "#{dragon.price} $/day"%>
+    </h4>
+    <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
+  </div>
+  <% end %>
+
+  <div class="card-dragon-whole">
+    <div class="card-dragon" style="background-image: url(<%= dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+=======
   <div class="card-dragon-container">
     <% @dragons.each do |dragon| %>
     <% if dragon.id.odd? %>
@@ -31,6 +59,7 @@
       <h4 class="card-dragon-price">
         <%= "#{dragon.price} €/day"%>
       </h4>
+>>>>>>> master
       <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
     </div>
     <% end %>
@@ -68,6 +97,16 @@
     <%= image_tag 'grey.jpg' %>
     </div>
   <% end %>
+<<<<<<< HEAD
+  <% end %>
+</div>
+<div class="map-dragon", id="map"
+  style="width: 100%",
+  data-markers="<%= @markers.to_json %>">
+  <%= image_tag 'grey.jpg' %>
+</div>
+=======
+>>>>>>> master
 
 </div>
 
