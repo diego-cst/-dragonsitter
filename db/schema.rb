@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_08_14_092751) do
   create_table "bookings", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.integer "status", default: 2
+    t.integer "status"
     t.bigint "user_id"
     t.bigint "dragon_id"
     t.datetime "created_at", null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_08_14_092751) do
     t.string "color"
     t.integer "size"
     t.text "diet"
-    t.integer "temperament", default: 2
+    t.integer "temperament"
     t.boolean "fire"
     t.string "location"
     t.integer "price"

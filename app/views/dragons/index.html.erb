@@ -1,6 +1,3 @@
-
-
-
 <!-- Changes the title of the page according to the results (with location name, or empty) -->
 <% if @query.present? && !@dragons.empty? %>
 <h2><%= "Dragons in #{@query.capitalize}" %></h2>
@@ -15,59 +12,60 @@
 
 <!-- Displays all the dragons in cards -->
 <div class="cover-all-container">
-<div class="card-dragon-container">
-  <% @dragons.each do |dragon| %>
-  <% if dragon.id.odd? %>
-  <div class="card-dragon-whole-white_odd">
-    <h2 class="card-dragon-name_odd">
-      <%= dragon.name %>
-    </h2>
-    <ul class="card-dragon-attributes">
-      <li>
-        <%= dragon.describe_temperament %>
-      </li>
-      <li>
-        <%= dragon.describe_size %>
-      </li>
-    </ul>
-    <h4 class="card-dragon-price">
-      <%= "#{dragon.price} $/day"%>
-    </h4>
-    <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
-  </div>
-  <% end %>
-
-  <div class="card-dragon-whole">
-    <div class="card-dragon" style="background-image: url(<%= dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+  <div class="card-dragon-container">
+    <% @dragons.each do |dragon| %>
+    <% if dragon.id.odd? %>
+    <div class="card-dragon-whole-white_odd">
+      <h2 class="card-dragon-name_odd">
+        <%= dragon.name %>
+      </h2>
+      <ul class="card-dragon-attributes">
+        <li>
+          <%= dragon.describe_temperament %>
+        </li>
+        <li>
+          <%= dragon.describe_size %>
+        </li>
+      </ul>
+      <h4 class="card-dragon-price">
+        <%= "#{dragon.price} $/day"%>
+      </h4>
       <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
     </div>
-  </div>
+    <% end %>
 
-  <% if dragon.id.even? %>
-  <div class="card-dragon-whole-white_even">
-    <h2 class="card-dragon-name_even">
-      <%= dragon.name %>
-    </h2>
-    <ul class="card-dragon-attributes">
-      <li>
-        <%= dragon.describe_temperament %>
-      </li>
-      <li>
-        <%= dragon.describe_size %>
-      </li>
-    </ul>
-    <h4 class="card-dragon-price">
-      <%= "#{dragon.price} $/day"%>
-    </h4>
-    <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
-  </div>
-  <% end %>
-  <% end %>
-</div>
-<div class="map-dragon">
-<%= image_tag 'grey.jpg' %>
+    <div class="card-dragon-whole">
+      <div class="card-dragon" style="background-image: url(<%= dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+        <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
+      </div>
+    </div>
 
-</div>
+    <% if dragon.id.even? %>
+    <div class="card-dragon-whole-white_even">
+      <h2 class="card-dragon-name_even">
+        <%= dragon.name %>
+      </h2>
+      <ul class="card-dragon-attributes">
+        <li>
+          <%= dragon.describe_temperament %>
+        </li>
+        <li>
+          <%= dragon.describe_size %>
+        </li>
+      </ul>
+      <h4 class="card-dragon-price">
+        <%= "#{dragon.price} $/day"%>
+      </h4>
+      <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+  <% if !@dragons.empty? %>
+    <div class="map-dragon">
+    <%= image_tag 'grey.jpg' %>
+    </div>
+  <% end %>
 
 </div>
 

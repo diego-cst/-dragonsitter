@@ -19,7 +19,7 @@
             <p class="price"><%= request.total_price %>€</p>
           </div>
         </div>
-        <% if request.status == 0 %>
+        <% if request.status == "pending" %>
           <div class="message-buttons">
             <%= link_to 'Accept request', booking_confirm_booking_path(request), method: :confirm_booking, :data => {:confirm=>"You accepted to rent #{request.dragon.name} from #{request.start_date} until #{request.end_date}"}, class: 'btn' %>
             <%= link_to 'Decline request', booking_refuse_booking_path(request), method: :refuse_booking, :data => {:confirm=>"You refused to rent #{request.dragon.name} from #{request.start_date} until #{request.end_date}"},class: 'btn' %>
