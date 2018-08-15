@@ -1,5 +1,5 @@
 <% if !@requests_received.nil? %>
-  <ul class="inbox">
+  <ul class="inbox" style="overflow-y:scroll;">
     <% @requests_received.each do |request| %>
       <li class="message">
         <div class="message-content">
