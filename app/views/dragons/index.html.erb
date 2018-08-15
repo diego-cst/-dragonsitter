@@ -6,13 +6,10 @@
   <h2>No dragons here!</h2>
   <%= image_tag "search.jpg" %>
 </div>
-<% else %>
-
 <% end %>
 
 <!-- Displays all the dragons in cards -->
 <div class="cover-all-container">
-
   <div class="card-dragon-container">
     <% @dragons.each do |dragon| %>
     <% if dragon.id.odd? %>
@@ -30,12 +27,12 @@
         </li>
       </ul>
       <h4 class="card-dragon-price">
-        <%= "#{dragon.price} €/day"%>
+        <%= "#{dragon.price} $/day"%>
       </h4>
-
       <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
     </div>
     <% end %>
+
 
     <div class="card-dragon-whole">
       <div class="card-dragon" style="background-image: url(<%= dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
@@ -64,17 +61,19 @@
     </div>
     <% end %>
     <% end %>
-  </div>
-  <% if !@dragons.empty? %>
+
+ <% if !@dragons.empty? %>
     <div class="map-dragon">
     <%= image_tag 'grey.jpg' %>
     </div>
   <% end %>
 </div>
-
-
+<div class="map-dragon", id="map"
+style="width: 100%",
+data-markers="<%= @markers.to_json %>">
+<%= image_tag 'grey.jpg' %>
 </div>
-
+  </div>
 
 
 
