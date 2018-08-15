@@ -11,31 +11,31 @@
 
       <div class="dragon-show-info-card col-xs-12 col-md-8">
         <div class="dragon-name-user-profile">
-        <h3><%= @dragon.name %></h3>
-        <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar' %>
+          <h3><%= @dragon.name %></h3>
+          <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar' %>
         </div>
         <p> <%= @dragon.location %> </p>
         <ul class="dragon-attributes">
           <li class="dragon-bullet-attributes">
             <i class="fas fa-exclamation-circle"></i>
             <%= @dragon.describe_temperament %></li>
-            <li class="dragon-bullet-attributes">
-              <i class="fas fa-fire"></i>
-              <%= @dragon.fire %>
-              <li>Size: <%= @dragon.describe_size %></li>
-            </ul>
-            <p><%= @dragon.description %></p>
-          </div>
+          <li class="dragon-bullet-attributes">
+            <i class="fas fa-fire"></i>
+            <%= @dragon.fire %>
+          <li>Size: <%= @dragon.describe_size %></li>
+        </ul>
+        <p><%= @dragon.description %></p>
+      </div>
 
-          <div class="booking-box col-xs-12 col-md-4">
-            <div class="booking-price-box">
-              <span class="booking-price"> <%= @dragon.price %> </span>
-              <span class="booking-per-night">€ per day</span>
-            </div>
-            <%= render 'form-bookings', dragon: @dragon, booking: @booking %>
-          </div>
+      <div class="booking-box col-xs-12 col-md-4">
+        <div class="booking-price-box">
+          <span class="booking-price"> <%= @dragon.price %> </span>
+          <span class="booking-per-night">€ per day</span>
         </div>
+        <%= render 'form-bookings', dragon: @dragon, booking: @booking %>
       </div>
     </div>
+  </div>
+</div>
 
 
