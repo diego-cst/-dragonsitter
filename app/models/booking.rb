@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :dragon
   validates :start_date, :end_date, presence: true
-  validates :status, inclusion: {in: (0..2)}
+  enum status: [ :pending, :confirmed, :declined ]
 
   def total_duration
     duration = self.end_date - self.start_date
@@ -23,17 +23,6 @@ class Booking < ApplicationRecord
       return "green"
     when 2
       return "red"
-    end
-  end
-
-  def status_name
-    case self.status
-    when 0
-      return "pending"
-    when 1
-      return "confirmed"
-    when 2
-      return "declined"
     end
   end
 end

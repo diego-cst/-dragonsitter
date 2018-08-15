@@ -41,5 +41,8 @@ class Dragon < ApplicationRecord
     end
   end
 
+  def booked_by?(user)
+    renters.where(id: user.id).present?
+  end
 
 end
