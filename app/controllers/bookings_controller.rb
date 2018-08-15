@@ -10,10 +10,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.dragon = @dragon
+    @booking.status = 0
     if @booking.save
       redirect_to(booking_path(@booking))
     else
-      render(:new)
+      redirect_back(fallback_location: root_path)
     end
   end
 

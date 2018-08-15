@@ -25,4 +25,15 @@ class Booking < ApplicationRecord
       return "red"
     end
   end
+
+  def status_name
+    case self.status
+    when 0
+      return "pending"
+    when 1
+      return "confirmed"
+    when 2
+      return "declined"
+    end
+  end
 end

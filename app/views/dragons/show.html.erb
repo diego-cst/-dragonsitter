@@ -12,7 +12,7 @@
       <div class="dragon-show-info-card col-xs-12 col-md-8">
         <div class="dragon-name-user-profile">
         <h3><%= @dragon.name %></h3>
-        <%= cl_image_tag @photo, class: 'avatar' %>
+        <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar' %>
         </div>
         <p> <%= @dragon.location %> </p>
         <ul class="dragon-attributes">
@@ -24,7 +24,7 @@
               <%= @dragon.fire %>
               <li>Size: <%= @dragon.describe_size %></li>
             </ul>
-            <p><%=  @dragon.description %></p>
+            <p><%= @dragon.description %></p>
           </div>
 
           <div class="booking-box col-xs-12 col-md-4">
@@ -32,7 +32,7 @@
               <span class="booking-price"> <%= @dragon.price %> </span>
               <span class="booking-per-night">€ per day</span>
             </div>
-            <%= render 'form-bookings', dragon: @dragon, booking: @booking%>
+            <%= render 'form-bookings', dragon: @dragon, booking: @booking %>
           </div>
         </div>
       </div>
