@@ -12,7 +12,11 @@ class DragonsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
+    if @dragon.booked_by?(current_user)
+      @booking = current_user.bookings.where(dragon: @dragon).last
+    else
+      @booking = Booking.new
+    end
   end
 
   def new

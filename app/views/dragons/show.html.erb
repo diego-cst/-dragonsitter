@@ -28,14 +28,24 @@
       </div>
 
       <div class="booking-box col-xs-12 col-md-4">
-        <div class="booking-price-box">
+        <% if @dragon.booked_by?(current_user) %>
+          <div class="dragon-show-confirmation">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          You already have a booking for <%= @dragon.name %>
+          for <%=@booking.total_duration%> days
+          starting on <%= @booking.start_date %>
+          <div>
+            <%= link_to "Manage my bookings", profile_path(current_user) %>
+          </div>
+        <% else %>
+          <div class="booking-price-box">
           <span class="booking-price"> <%= @dragon.price %> </span>
           <span class="booking-per-night">€ per day</span>
-        </div>
-        <%= render 'form-bookings', dragon: @dragon, booking: @booking %>
+          </div>
+          <%= render 'dragons/form-bookings', dragon: @dragon, booking: @booking %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-
-

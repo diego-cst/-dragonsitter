@@ -1,5 +1,5 @@
 <%= simple_form_for [@dragon, @booking] do |f| %>
-  <%= f.input :start_date, wrapper_html: { class: 'booking-start-date' } %>
-  <%= f.input :end_date %>
+  <%= f.input :start_date,  as: :string, wrapper_html: { class: 'booking-start-date' } %>
+  <%= f.input :end_date, as: :string %>
   <%= f.submit "Book #{@dragon.name}", class: "button-grey" %>
 <% end %>
