@@ -33,9 +33,11 @@
     </div>
 
     <div class="user-owned-dragons", style="overflow-y:scroll;">
-      <h3>My dragons</h3>
+      <div class="user-owned-dragons-heading">
+        <h3>My dragons</h3>
+        <%= link_to 'Add a new dragon', new_dragon_path, class: 'edit-button button-grey'  %>
+      </div>
       <% if @owned_dragons %>
-
       <div class="row">
         <% @owned_dragons.each do |dragon| %>
         <div class="col-xs-12 col-md-3">
