@@ -13,8 +13,9 @@
         <div class="dragon-name-user-profile">
           <h3><%= @dragon.name %></h3>
           <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar' %>
+          <p> Owner: <%= @dragon.owner.name %></p>
         </div>
-        <p> <%= @dragon.location %> </p>
+        <p> In: <%= @dragon.location %> </p>
         <ul class="dragon-attributes">
           <li class="dragon-bullet-attributes">
             <i class="fas fa-exclamation-circle"></i>
