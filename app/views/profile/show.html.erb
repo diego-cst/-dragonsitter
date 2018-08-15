@@ -55,6 +55,9 @@
                 <%= dragon.describe_size %>
               </li>
             </ul>
+            <div class="dragon-edit">
+              <%= link_to raw("<i class='fas fa-pencil-alt'></i>"), edit_dragon_path(dragon)  %>
+            </div>
             <div class="dragon-delete">
               <%= link_to dragon_path(dragon), method: :delete, data: { confirm: "Are you sure?"} do %>
               <i class="fa fa-trash destroy_dose"></i>
