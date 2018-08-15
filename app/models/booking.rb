@@ -17,11 +17,11 @@ class Booking < ApplicationRecord
 
   def status_color
     case self.status
-    when 0
+    when "pending"
       return "yellow"
-    when 1
+    when "confirmed"
       return "green"
-    when 2
+    when "declined"
       return "red"
     end
   end
