@@ -20,7 +20,8 @@ autocomplete();
 
 
 
-const styles = [ {
+const styles = [
+{
         "featureType": "all",
         "elementType": "all",
         "stylers": [

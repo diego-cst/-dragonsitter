@@ -63,7 +63,7 @@ Dragon.create!([
     diet: "Its diet consists of most mammals, usually preferring pigs and humans.",
     temperament: 3,
     fire: true,
-    location: "Berlin",
+    address: "Berlin",
     price: 50,
     user_id: 1,
     description: "The Chinese Fireball, also known as the Liondragon, is a dragon native to China. It is a brilliant red and gold dragon, named for the rounded balls of flame that shoot from its nostrils. The Fireball is scarlet and smooth scaled with a fringe of golden spikes around its snub-snouted face and extremely protuberant eyes. They weigh between two and four tons. Its name is derived from the mushroom-shaped flame that comes from its nostrils when angered, along with the large mushroom-shaped flame it shoots from its mouth."
@@ -75,7 +75,7 @@ Dragon.create!([
     diet: "Its diet consists mostly of animals, though a stray orc or a human prisoner have occasionally gone amiss.",
     temperament: 3,
     fire: false,
-    location: "Berlin",
+    address: "Berlin",
     price: 200,
     user_id: 2,
     description: "Identical in appearance to dragons, the fellbeasts were described as large, winged creatures without feathers. Its pinions were in between horned fingers; and its body gave off a stench. It is possible that fellbeasts came from 'an older world'. The dark lord Sauron bred these fellbeasts and gave them to his servants."
@@ -87,7 +87,7 @@ Dragon.create!([
     diet: "In 1802, a Norwegian Ridgeback is reported to have carried off a Whale Calf off the coast of Norway.",
     temperament: 0,
     fire: true,
-    location: "Berlin",
+    address: "Berlin",
     price: 10,
     user_id: 3,
     description: "The Norwegian Ridgeback is a dragon native to Norway, and its typical habitat is the Northern mountains. It was said to physically resemble a Hungarian Horntail. It resembles the Hungarian Horntail, except for the black ridges on its back, the browner texture in its scales, and its less hostile attitude. It has venomous fangs, and its food of choice is large mammals, including water mammals, which is unusual for a dragon. Its eggs are black, and young Ridgebacks develop the ability to shoot flame earlier than any other breeds (around one to three months). Female Ridgebacks are generally more ferocious than the males."
@@ -99,7 +99,7 @@ Dragon.create!([
     diet: "His diet consists of the gold treasure it protects from the greedy dwarves",
     temperament: 2,
     fire: true,
-    location: "Berlin",
+    address: "Berlin",
     price: 180,
     user_id: 4,
     description: "The Ukrainian Ironbelly is a species of dragon native to Ukraine. It is said to be the largest dragon species in the world. Ironbellies have been subject to constant observation by the Ukrainian wizarding authorities, ever since a particular Ironbelly carried off a sailing ship from the Black Sea in 1799. Thankfully, the boat was empty at the time. "
@@ -111,7 +111,7 @@ Dragon.create!([
     diet: "Feeds mostly on fish in great quantity",
     temperament: 1,
     fire: true,
-    location: "Berlin",
+    address: "Berlin",
     price: 160,
     user_id: 5,
     description: "Toothless has a rather large scar on his right shoulder/neck which is around a foot in length with a width of about an inch. Toothless's eyes are a bright green, sometimes acid or emerald green. They are located very near the front of his face giving him excellent depth perception and reflexes in flight. He can narrow his pupils to slits when threatened or angry, similar to that of a cat. However, when he is docile or happy, his pupils dilate and become more dog-like. Toothless gets his name from his ability to retract his teeth. While in Alpha Mode, Toothless has blue markings on his back, fins, spines, and forehead, glowing because of the fire. His nostrils glow, too."
