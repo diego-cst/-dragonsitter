@@ -1,6 +1,6 @@
 <!-- Changes the title of the page according to the results (with location name, or empty) -->
 <% if @query.present? && !@dragons.empty? %>
-  <h2>  <%="Dragons in #{@query.capitalize}"%> </h2>
+  <h2>  <%="Dragons in \"#{@query.capitalize}\""%> </h2>
   <% elsif @dragons.empty? %>
   <div class="empty-search-results col-xs-12 col-md-4 col-md-offset-4">
     <h2>No dragons here!</h2>
