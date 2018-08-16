@@ -10,7 +10,8 @@
           <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar' %>
           <p> <strong> <%= @dragon.owner.name %>'s </strong> Dragon</p>
         </div>
-        <p> <%= @dragon.address %> </p>
+
+        <p class="dragon-show-address"><%= @dragon.address %> </p>
         <ul class="dragon-attributes">
           <li class="dragon-bullet-attributes">
             <i class="fas fa-exclamation-circle"></i>
@@ -18,15 +19,16 @@
             <li class="dragon-bullet-attributes">
               <i class="fas fa-fire"></i>
               <% if @dragon.fire == true %>
-              Pyromaniac
+                Pyromaniac
               <% else %>
-              No fire
+                No fire
               <% end %>
             </li>
             <li class="dragon-bullet-attributes">
               <i class="fab fa-wolf-pack-battalion"></i>
               <%= @dragon.describe_size %></li>
             </ul>
+
             <p class="dragon-show-description-field"><%= @dragon.description %></p>
           </div>
 
