@@ -8,7 +8,7 @@
         <div class="dragon-name-user-profile">
           <h3><%= @dragon.name %></h3>
           <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar' %>
-          <p> <strong> <%= @dragon.owner.name %>'s </strong> Dragon</p>
+          <p> <strong class="owner-name-dragon"> <%= @dragon.owner.name %></strong>'s  Dragon</p>
         </div>
 
         <p class="dragon-show-address"><%= @dragon.address %> </p>
