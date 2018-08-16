@@ -111,7 +111,7 @@ Dragon.create!([
     diet: "Feeds mostly on fish in great quantity",
     temperament: 1,
     fire: true,
-    address: "Berlin",
+    address: "Potsdamerplatz, Berlin",
     price: 160,
     user_id: 5,
     description: "Toothless has a rather large scar on his right shoulder/neck which is around a foot in length with a width of about an inch. Toothless's eyes are a bright green, sometimes acid or emerald green. They are located very near the front of his face giving him excellent depth perception and reflexes in flight. He can narrow his pupils to slits when threatened or angry, similar to that of a cat. However, when he is docile or happy, his pupils dilate and become more dog-like. Toothless gets his name from his ability to retract his teeth. While in Alpha Mode, Toothless has blue markings on his back, fins, spines, and forehead, glowing because of the fire. His nostrils glow, too."
