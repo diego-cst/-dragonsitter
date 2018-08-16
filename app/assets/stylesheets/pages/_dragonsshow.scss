@@ -66,6 +66,7 @@
   width: 90%;
   margin-left: 0;
   margin-top: 15px;
+  font-weight: lighter;
 }
 
 .booking-price {
@@ -74,8 +75,9 @@
 }
 
 .booking-per-night {
-  font-weight: lighter;
+  font-weight: normal;
   font-size: 16px;
+  color: #00888C;
 }
 
 .booking-start-date {
@@ -96,4 +98,8 @@
 
 .dragon-show-address {
   margin-top: 15px;
+}
+
+.owner-name-dragon {
+  color: #B50200;
 }
