@@ -6,16 +6,17 @@ class Dragon < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :renters, through: :bookings, source: :user
 
-
-
   validates :name, presence: true
   validates :price, presence: true
   validates :price, numericality: { only_integer: true }
   validates :temperament, inclusion: {in: (0..4)}
   validates :size, inclusion: {in: (0..4)}
 
-
   mount_uploader :photo, DragonPhotoUploader
+
+  def markers
+    {lat: self.latitude, lng: self.longitude}
+  end
 
   def describe_temperament
     case self.temperament

@@ -1,19 +1,19 @@
 <!-- Changes the title of the page according to the results (with location name, or empty) -->
 <% if @query.present? && !@dragons.empty? %>
-<h2><%= "Dragons in #{@query.capitalize}" %></h2>
-<% elsif @dragons.empty? %>
-<div class="empty-search-results col-xs-12 col-md-4 col-md-offset-4">
-  <h2>No dragons here!</h2>
-  <%= image_tag "search.jpg" %>
-</div>
+  <h2>  <%="Dragons in \"#{@query.capitalize}\""%> </h2>
+  <% elsif @dragons.empty? %>
+  <div class="empty-search-results col-xs-12 col-md-4 col-md-offset-4">
+    <h2>No dragons here!</h2>
+    <%= image_tag "search.jpg" %>
+  </div>
 <% end %>
 
 <!-- Displays all the dragons in cards -->
 <div class="cover-all-container">
   <div class="card-dragon-container">
     <% @dragons.each do |dragon| %>
-    <% if dragon.id.odd? %>
-    <div class="card-dragon-whole-white_odd">
+      <% if dragon.id.odd? %>
+      <div class="card-dragon-whole-white_odd">
       <h2 class="card-dragon-name_odd">
         <%= dragon.name %>
       </h2>
@@ -30,7 +30,7 @@
         <%= "#{dragon.price} $/day"%>
       </h4>
       <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
-    </div>
+      </div>
     <% end %>
 
 
@@ -61,15 +61,24 @@
     </div>
     <% end %>
     <% end %>
+  </div>
 
+  <% if @dragons.present? %>
+    <div class="map-dragon", id="map"
+    style="width: 100%",
+    data-markers="<%= @markers.to_json %>"
+    <%= image_tag 'grey.jpg' %>
+    </div>
+  <% end %>
 
   </div>
   <div class="map-dragon", id="map"
   style="width: 100%",
   data-markers="<%= @markers.to_json %>">
   <%= image_tag 'grey.jpg' %>
+  </div>
 </div>
-</div>
+
 
 
 
