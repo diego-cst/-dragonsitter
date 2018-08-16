@@ -74,7 +74,8 @@ class DragonsController < ApplicationController
       {
         lat: dragon.latitude,
         lng: dragon.longitude,
-        infoWindow: { content: render_to_string(partial: "/dragons/map_box", locals: { dragon: dragon }) }
+        infoWindow: { content: render_to_string(partial: "/dragons/map_box", locals: { dragon: dragon }) },
+        icon: 'http://res.cloudinary.com/dfn1yucto/image/upload/w_60,h_60,c_scale/co_rgb:f60909,dn_299,e_colorize:56/v1534429310/pin.gif'
       }
     end
   end
