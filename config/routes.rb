@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :dragons do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :show]
   end
   resources :profile, only: [:show]
-  resources :bookings, only: [:show, :destroy] do
+  resources :bookings, only: [:destroy] do
     post '/confirm', to: "update_status#confirm_booking", as: :confirm_booking
     post '/refuse', to: "update_status#refuse_booking", as: :refuse_booking
   end

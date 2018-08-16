@@ -5,9 +5,7 @@
     <p>Kill time and potentially yourself by playing with fire</p>
     <div class="home-search-form">
       <%= form_tag dragons_path, method: :get do %>
-      <%= text_field_tag :address,
-      params[:address],
-      class: "input-search",
+      <%= text_field_tag :address, params[:address], class: "input-search",
       placeholder: "Type a location.."%>
       <button name="button" type="submit" class="button-white">Search
       </button>
