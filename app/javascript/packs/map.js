@@ -373,15 +373,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const markers = JSON.parse(mapElement.dataset.markers);
   map.addMarkers(markers);
 
-  // var infowindow = new google.maps.InfoWindow({
-  //   content: contentString
-  // });
-
-  // markers.forEach(function(marker) {
-  //   marker.addListener('click', function() {
-  //   infowindow.open(map, marker);
-  //   })
-  // });
 
   if (markers.length === 0) {
     map.setZoom(2);
@@ -391,6 +382,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   } else {
     map.fitLatLngBounds(markers);
   }
+
 }
 
 autocomplete();
