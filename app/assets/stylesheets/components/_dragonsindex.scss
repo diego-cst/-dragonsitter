@@ -1,9 +1,7 @@
 .dragons-title-index {
   font-size: 56px;
   font-weight: lighter;
-  margin-left: 3%;
-  margin-top: 0;
-  padding-bottom: 35px;
+  margin-left: 25%;
 }
 
 .map-dragon {
@@ -21,13 +19,13 @@
   display:flex;
   flex-wrap: wrap;
   overflow: hidden;
-  margin-top: 40px;
+  margin-top: 0;
   width: 65%;
 
   // flex-direction:
 }
 
-.card-dragon-whole:nth-child(odd) {
+.card-dragon-whole {
   width: 50%;
   position: relative;
   box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);

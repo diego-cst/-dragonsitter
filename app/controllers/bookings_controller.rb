@@ -24,6 +24,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @dragon = Dragon.find(params[:id])
   end
 
   def destroy

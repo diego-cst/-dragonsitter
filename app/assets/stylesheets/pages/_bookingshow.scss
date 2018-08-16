@@ -1,7 +1,16 @@
 .show-booking-details{
-  border: 1px solid grey;
+  border: 1px solid #e4e4e4;
   border-radius: 3px;
   padding: 10px;
+  background-color: #F1F1F1;
+  height: 300px;
+  width: 100%;
+  color: #484848;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .show-booking-icon{
 font-size: 52px;
@@ -13,5 +22,46 @@ margin: 10px;
 }
 .show-booking-bottom{
   text-align: center;
-  margin: 10px;
+  margin-top: 20px;
+}
+ .booking-confirm-button {
+  margin-top: 20px;
+ }
+
+.show-booking-group {
+  margin-right: 50px;
+text-align: left;
+}
+
+.booking-box-container {
+  width: 80%;
+}
+
+.booking-container {
+  display: flex;
+  width: 100%;
+}
+
+.show-booking-details {
+  z-index: 2;
+  transform: translate(-285px, 10px);
+  width: 110%;
+  background-color: #F1F1F1;
+}
+
+.show-booking-heading {
+  h2 {
+    font-size: 40px;
+  }
+}
+
+.card-dragon-booking {
+  position: relative;
+  border: 1px solid #e4e4e4;
+  height: 100%;
+  margin-top: 15px;
+  margin-left: 0px;
+  z-index: 2;
+  transform: translate(200px, 10px);
+  box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
 }
