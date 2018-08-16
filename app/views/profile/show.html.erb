@@ -109,8 +109,7 @@
             <div class="card-booking-status">
             <i class="fas fa-circle" style="color: <%= booking.status_color %>;"> </i>
             </div>
-
-            <%= link_to "", booking_path(booking), class: "card-dragon-link" %>
+              <%= link_to "", dragon_booking_path(booking.dragon, booking), class: "card-dragon-link" %>
           </div>
         </div>
         <% end %>
