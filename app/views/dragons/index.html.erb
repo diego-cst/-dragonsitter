@@ -19,6 +19,9 @@
           <div class="card-dragon-info-all">
             <h2 class="card-dragon-name_odd">
               <%= dragon.name %>
+              <% if dragon.owner == current_user %>
+                    <p class="disclaimer-ownership"><i class="fas fa-exclamation-circle"></i> This is your dragon !</p>
+              <% end %>
             </h2>
             <p class="card-dragon-description"><%= dragon.description.truncate_words(20) %></p>
             <ul class="card-dragon-attributes">
@@ -48,6 +51,9 @@
           <div class="card-dragon-info-all">
             <h2 class="card-dragon-name_even">
               <%= dragon.name %>
+              <% if dragon.owner == current_user %>
+                    <p class="disclaimer-ownership"><i class="fas fa-exclamation-circle"></i> This is your dragon !</p>
+              <% end %>
             </h2>
             <p class="card-dragon-description"><%= dragon.description.truncate_words(20) %></p>
             <ul class="card-dragon-attributes">
