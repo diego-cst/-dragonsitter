@@ -4,7 +4,7 @@ class DragonsController < ApplicationController
 
   def index
     if params[:address].present?
-      @dragons = Dragon.where('address ILIKE ?', "#{params[:address]}")
+      @dragons = Dragon.where('address ILIKE ?', "%#{params[:address]}%")
       @query = params[:address]
       set_markers
     else
