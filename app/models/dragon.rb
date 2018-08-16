@@ -12,7 +12,9 @@ class Dragon < ApplicationRecord
   validates :temperament, inclusion: {in: (0..4)}
   validates :size, inclusion: {in: (0..4)}
 
-  mount_uploader :photo, DragonPhotoUploader
+  mount_uploader :photo_first, DragonPhotoUploader
+  mount_uploader :photo_second, DragonPhotoUploader
+  mount_uploader :photo_third, DragonPhotoUploader
 
   def markers
     {lat: self.latitude, lng: self.longitude}

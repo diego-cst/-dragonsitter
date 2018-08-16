@@ -43,7 +43,7 @@
       <div class="row">
         <% @owned_dragons.each do |dragon| %>
         <div class="col-xs-12 col-md-3">
-          <div class="card" style="background-image: url(<%= dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+          <div class="card" style="background-image: url(<%= dragon.photo_first_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
             <h2 class="card-dragon-name">
               <%= dragon.name %>
             </h2>
@@ -86,7 +86,7 @@
       <div class="row">
         <% @bookings.each do |booking| %>
         <div class="col-xs-12 col-md-3">
-          <div class="card" style="background-image: url(<%= booking.dragon.photo_url %>)">
+          <div class="card" style="background-image: url(<%= booking.dragon.photo_first_url %>)">
             <h2 class="card-dragon-name">
               <%= booking.dragon.name %>
             </h2>
