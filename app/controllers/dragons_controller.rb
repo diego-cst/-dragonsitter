@@ -7,9 +7,11 @@ class DragonsController < ApplicationController
       @dragons = Dragon.where('address ILIKE ?', "%#{params[:address]}%")
       @query = params[:address]
       set_markers
+      set_info
     else
       @dragons = Dragon.all
       set_markers
+      set_info
     end
   end
 
@@ -71,9 +73,21 @@ class DragonsController < ApplicationController
 
   def set_markers
     @markers = @dragons.map do |dragon|
-      dragon.markers
+      {
+        lat: dragon.latitude,
+        lng: dragon.longitude,
+        infoWindow: { content: render_to_string(partial: "/dragons/map_box", locals: { dragon: dragon }) },
+        icon: 'http://res.cloudinary.com/dfn1yucto/image/upload/w_60,h_60,c_scale/co_rgb:f60909,dn_299,e_colorize:56/v1534429310/pin.gif'
+      }
     end
   end
+
+  def set_info
+    @info = @dragons.map do |dragon|
+      dragon.name
+    end
+  end
+
 end
 
 
