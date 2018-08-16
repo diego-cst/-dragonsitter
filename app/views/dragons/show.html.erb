@@ -13,19 +13,26 @@
         <div class="dragon-name-user-profile">
           <h3><%= @dragon.name %></h3>
           <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar' %>
-          <p> Owner: <%= @dragon.owner.name %></p>
+          <p> <strong> <%= @dragon.owner.name %>'s </strong> Dragon</p>
         </div>
-        <p> In: <%= @dragon.address %> </p>
+        <p> <%= @dragon.address %> </p>
         <ul class="dragon-attributes">
           <li class="dragon-bullet-attributes">
             <i class="fas fa-exclamation-circle"></i>
             <%= @dragon.describe_temperament %></li>
             <li class="dragon-bullet-attributes">
               <i class="fas fa-fire"></i>
-              <%= @dragon.fire %>
-              <li>Size: <%= @dragon.describe_size %></li>
+              <% if @dragon.fire == true %>
+              Pyromaniac
+              <% else %>
+              No fire
+              <% end %>
+            </li>
+            <li class="dragon-bullet-attributes">
+              <i class="fab fa-wolf-pack-battalion"></i>
+              <%= @dragon.describe_size %></li>
             </ul>
-            <p class="dragon-show-description"><%= @dragon.description %></p>
+            <p class="dragon-show-description-field"><%= @dragon.description %></p>
           </div>
 
           <div class="booking-box col-xs-12 col-md-4">
@@ -47,7 +54,7 @@
             <%= simple_form_for [@dragon, @booking] do |f| %>
             <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
             <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-            <%= f.button :submit, "Book #{@dragon.name}", class: "btn btn-primary" %>
+            <%= f.button :submit, "Book #{@dragon.name}", class: "button-grey" %>
             <% end %>
             <% end %>
           </div>
