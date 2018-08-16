@@ -65,7 +65,7 @@ Dragon.create!([
     fire: true,
     address: "Danckelmannstraße 29, Berlin, Germany",
     price: 50,
-    user_id: 1,
+    user_id: 2,
     description: "The Chinese Fireball, also known as the Liondragon, is a dragon native to China. It is a brilliant red and gold dragon, named for the rounded balls of flame that shoot from its nostrils. The Fireball is scarlet and smooth scaled with a fringe of golden spikes around its snub-snouted face and extremely protuberant eyes. They weigh between two and four tons. Its name is derived from the mushroom-shaped flame that comes from its nostrils when angered, along with the large mushroom-shaped flame it shoots from its mouth."
   },
   {
@@ -77,7 +77,7 @@ Dragon.create!([
     fire: false,
     address: "Holzmarktstraße 11, Berlin, Germany",
     price: 200,
-    user_id: 2,
+    user_id: 1,
     description: "Identical in appearance to dragons, the fellbeasts were described as large, winged creatures without feathers. Its pinions were in between horned fingers; and its body gave off a stench. It is possible that fellbeasts came from 'an older world'. The dark lord Sauron bred these fellbeasts and gave them to his servants."
   },
   {
@@ -111,10 +111,70 @@ Dragon.create!([
     diet: "Feeds mostly on fish in great quantity",
     temperament: 1,
     fire: true,
-    address: "Potsdamerplatz, Berlin, Germany",
+    address: "Hermannstraße, Berlin, Germany",
     price: 160,
     user_id: 5,
     description: "Toothless has a rather large scar on his right shoulder/neck which is around a foot in length with a width of about an inch. Toothless's eyes are a bright green, sometimes acid or emerald green. They are located very near the front of his face giving him excellent depth perception and reflexes in flight. He can narrow his pupils to slits when threatened or angry, similar to that of a cat. However, when he is docile or happy, his pupils dilate and become more dog-like. Toothless gets his name from his ability to retract his teeth. While in Alpha Mode, Toothless has blue markings on his back, fins, spines, and forehead, glowing because of the fire. His nostrils glow, too."
+  },
+  {
+    name: "Rich",
+    color: "pink",
+    size: 1,
+    diet: "Feeds mostly on fish in great quantity",
+    temperament: 1,
+    fire: true,
+    address: "Rudi-Dutschke-Straße, Berlin, Germany",
+    price: 2,
+    user_id: 5,
+    description: "A cuddly little dragon puppy, that loves to be gently caressed"
+  },
+  {
+    name: "Hungarian Horntail",
+    color: "black",
+    size: 1,
+    diet: "Feeds mostly on fish in great quantity",
+    temperament: 1,
+    fire: true,
+    address: "Hermannplatz, Berlin, Germany",
+    price: 2,
+    user_id: 3,
+    description: "The Hungarian Horntail is a dragon native to Hungary and is considered to be one of the most dangerous dragon breeds, if not the most dangerous. It possesses black scales and is lizard-like in appearance."
+  },
+  {
+    name: "Peruvian Vipertooth",
+    color: "black",
+    size: 1,
+    diet: "Feeds mostly on fish in great quantity",
+    temperament: 1,
+    fire: true,
+    address: "Alexanderplatz, Berlin, Germany",
+    price: 2,
+    user_id: 3,
+    description: "The Peruvian Vipertooth is a dragon native to eastern and north-eastern Peru and is copper in colour."
+  },
+  {
+    name: "Swedish Short-Snout",
+    color: "black",
+    size: 1,
+    diet: "Feeds mostly on fish in great quantity",
+    temperament: 1,
+    fire: true,
+    address: "Grunewaldstraße 54, Berlin, Germany",
+    price: 2,
+    user_id: 2,
+    description: "The Swedish Short-Snout was a species of dragon, most likely native to Sweden. It is a silvery blue dragon that breathes a brilliant blue flame."
+  },
+  {
+    name: "Hebridean Black",
+    color: "black",
+    size: 1,
+    diet: "Feeds mostly on fish in great quantity",
+    temperament: 1,
+    fire: true,
+    address: "Grunewaldstraße 54, Berlin, Germany",
+    price: 2,
+    user_id: 2,
+    description: "The Hebridean Black is a dragon species native to the Hebrides islands of Scotland. It has brilliant purple coloured eyes."
   }
 ]);
 
