@@ -17,14 +17,15 @@
       <% if count.odd? %>
         <div class="card-dragon-whole-white_odd">
           <div class="card-dragon-info-all">
-            <h2 class="card-dragon-name_odd">
-              <%= dragon.name %>
-              <% if dragon.owner == current_user %>
-                    <p class="disclaimer-ownership"><i class="fas fa-exclamation-circle"></i> This is your dragon !</p>
-              <% end %>
-            </h2>
-            <p class="card-dragon-description">
-              <%= dragon.description.truncate_words(20) %></p>
+            <div>
+              <h3 class="card-dragon-name_odd">
+                <%= dragon.name %></h3>
+                <% if dragon.owner == current_user %>
+                      <p class="disclaimer-ownership"><i class="fas fa-exclamation-circle"></i> This is your dragon !</p>
+                <% end %>
+              <p class="card-dragon-description">
+                <%= dragon.description.truncate_words(20) %></p>
+            </div>
             <ul class="card-dragon-attributes">
               <li>
                 <i class="fas fa-exclamation-circle"></i>
@@ -60,13 +61,14 @@
       <% if count.even? %>
         <div class="card-dragon-whole-white_even">
           <div class="card-dragon-info-all">
-            <h2 class="card-dragon-name_even">
-              <%= dragon.name %>
-              <% if dragon.owner == current_user %>
-                    <p class="disclaimer-ownership"><i class="fas fa-exclamation-circle"></i> This is your dragon !</p>
-              <% end %>
-            </h2>
-            <p class="card-dragon-description"><%= dragon.description.truncate_words(20) %></p>
+            <div>
+              <h3 class="card-dragon-name_even">
+                <%= dragon.name %></h3>
+                <% if dragon.owner == current_user %>
+                      <p class="disclaimer-ownership"><i class="fas fa-exclamation-circle"></i> This is your dragon !</p>
+                <% end %>
+              <p class="card-dragon-description"><%= dragon.description.truncate_words(20) %></p>
+            </div>
             <ul class="card-dragon-attributes">
               <li>
                 <i class="fas fa-exclamation-circle"></i>

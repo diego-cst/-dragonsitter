@@ -22,7 +22,7 @@
   width: 68%;
   position: relative;
   margin-top: 15px;
-  margin-left: 0px;
+  left: 80px;
   z-index: 3;
   transform: translate(30px, 10px);
   box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
@@ -68,12 +68,13 @@ color: #333333;
 }
 
 .show-booking-group {
-  margin-right: 50px;
-  text-align: left;
+
+  float: left;
+  width: 400px;
 }
 
 .booking-box-container {
-  width: 80%;
+  width: 100%;
   z-index: 2;
   transform: translate(-285px, 10px);
 }
