@@ -1,7 +1,11 @@
 .home-banner-content {
+  position: fixed;
+  top: 50%;
+  left:50%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  z-index:99;
 }
 
 .input-search {
@@ -32,16 +36,21 @@
   color: #333333;
 }
 
-.home-banner {
+#myVideo {
+  // top: -50%;
+  // left: -50%;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
   color: white;
   text-align: center;
-  height: calc(100vh - 70px);
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
+  // background-size: cover !important;
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: center;
+  z-index:0;
 }
+
 .home-banner h1 {
   font-size: 80px;
   font-weight: bolder;
