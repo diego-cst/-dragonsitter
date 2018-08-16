@@ -13,10 +13,14 @@
   box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
 }
 
+.home-banner-bookings {
+  height: 100vh;
+  background-size: cover !important;
+}
+
 .card-dragon-whole-booking {
   width: 68%;
   position: relative;
-  border: 1px solid #e4e4e4;
   margin-top: 15px;
   margin-left: 0px;
   z-index: 3;
@@ -29,8 +33,13 @@
   color: lightgreen;
   margin: 10px;
 }
-.show-booking-heading{
+.show-booking-heading-info{
   text-align: center;
+  margin-top: 115px;
+
+  h2 {
+    color: white;
+  }
 }
 .show-booking-bottom{
   text-align: center;
@@ -85,7 +94,7 @@ color: #333333;
 
   h2 {
     font-size: 40px;
-
+    color: white;
   }
 }
 
@@ -96,3 +105,31 @@ color: #333333;
   background-repeat: no-repeat;
   background-position: center;
 }
+
+@media only screen and (max-width: 1200px) {
+  .card-dragon-booking {
+    opacity: 0;
+  }
+  .card-dragon-whole-booking {
+    box-shadow: none;
+  }
+  .booking-manage-button {
+    right: 200px;
+  }
+  .booking-return-button {
+    right: -80px;
+  }
+}
+
+
+
+// .fade {
+//      opacity: 0;
+//      transition: opacity 0.15s linear;
+//      -o-transition: opacity 0.15s linear;
+//      -webkit-transition: opacity 0.15s linear;
+// }
+
+// .fade:hover {
+//     opacity: 1
+// }
