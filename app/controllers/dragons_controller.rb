@@ -1,21 +1,15 @@
 class DragonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_dragon, only: [:show, :edit, :update, :destroy]
-  # before_action :set_markers, only: [:index]
 
   def index
     if params[:address].present?
       @dragons = Dragon.where('address ILIKE ?', "#{params[:address]}")
       @query = params[:address]
-      @markers = @dragons.map do |dragon|
-      {
-      lat: dragon.latitude,
-      lng: dragon.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      }
-      end
+      set_markers
     else
       @dragons = Dragon.all
+      set_markers
     end
   end
 
@@ -73,6 +67,11 @@ class DragonsController < ApplicationController
     @dragon = Dragon.find(params[:id])
   end
 
+  def set_markers
+    @markers = @dragons.map do |dragon|
+      dragon.markers
+    end
+  end
 end
 
 
