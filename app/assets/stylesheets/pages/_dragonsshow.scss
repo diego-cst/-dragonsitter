@@ -39,12 +39,27 @@
   margin-top: 20px;
   border: 1px solid #e4e4e4;
   padding: 16px 24px;
+  position: sticky;
+  top: 5px;
 
   label {
     font-weight: light;
     word-wrap: break-word;
     font-size: 12px;
   }
+}
+
+.dragon-name-user-profile {
+
+  .avatar {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
+
+.dragon-show-description-field {
+  width: 90%;
+  margin-left: 0;
 }
 
 .booking-price {
@@ -65,4 +80,10 @@
   font-size: 40px;
   text-align: center;
   color: lightgreen;
+}
+
+.map-dragon-show {
+  width: 45% !important;
+  height: 40vh;
+  margin-bottom: 50px;
 }

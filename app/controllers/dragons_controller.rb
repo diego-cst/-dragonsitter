@@ -19,6 +19,8 @@ class DragonsController < ApplicationController
     else
       @booking = Booking.new
     end
+    @markers = []
+    @markers << @dragon.markers
   end
 
   def new
