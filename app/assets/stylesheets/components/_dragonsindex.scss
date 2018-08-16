@@ -21,8 +21,6 @@
   overflow: hidden;
   margin-top: 0;
   width: 65%;
-
-  // flex-direction:
 }
 
 .card-dragon-whole {
@@ -30,15 +28,7 @@
   position: relative;
   box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
   transition: all .9s ease-in-out;
-  // -moz-transition: all 0.3s;
-  // -webkit-transition: all 0.3s;
-  // transition: all 0.3s;
 }
-
-// .card-dragon-whole:hover .card-dragon
-// .card-dragon-whole:focus .card-dragon {
-//   transform: scale(1.2);
-// }
 
 .card-dragon-whole:hover {
   transform: scale(1.1);
@@ -55,12 +45,8 @@
   z-index: 2;
   transform: translate(25px, 10px);
   box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
-  transition: all .9s ease-in-out;
 }
 
-.card-dragon-whole-white_odd:hover {
-  transform: scale(1.1);
-}
 
 
 .card-dragon-whole-white_even {
@@ -74,11 +60,6 @@
   z-index: 2;
   transform: translate(-25px, 10px);
   box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
-  transition: all .9s ease-in-out;
-}
-
-.card-dragon-whole-white_even:hover {
-  transform: scale(1.1);
 }
 
 .card-dragon {
@@ -96,11 +77,13 @@
 .card-dragon-name_odd {
   position: absolute;
   left: 10px;
+  width: 295px;
 }
 
 .card-dragon-name_even {
   position: absolute;
   left: 10px;
+  width: 295px;
 }
 
 .dragon-icon_odd {

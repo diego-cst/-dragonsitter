@@ -9,6 +9,7 @@
   border-radius: 3px;
 }
 
+
 .dragon-show-description {
   background-color: white;
   margin-top: 20px;
@@ -27,7 +28,7 @@
   li {
     float: left;
     display: block;
-    padding: 16px;
+    padding: 5px 16px;
   }
 
   li:first-child {
@@ -40,7 +41,7 @@
   border: 1px solid #e4e4e4;
   padding: 16px 24px;
   position: sticky;
-  top: 5px;
+  top: 75px;
 
   label {
     font-weight: light;
@@ -50,16 +51,21 @@
 }
 
 .dragon-name-user-profile {
+  position: relative;
 
   .avatar {
     margin-bottom: 20px;
     margin-top: 10px;
+    position: absolute;
+    right: 123px;
+    top: 0;
   }
 }
 
 .dragon-show-description-field {
   width: 90%;
   margin-left: 0;
+  margin-top: 15px;
 }
 
 .booking-price {
@@ -86,4 +92,8 @@
   width: 45% !important;
   height: 40vh;
   margin-bottom: 50px;
+}
+
+.dragon-show-address {
+  margin-top: 15px;
 }

@@ -20,16 +20,27 @@
             <h2 class="card-dragon-name_odd">
               <%= dragon.name %>
             </h2>
-            <p class="card-dragon-description"><%= dragon.description.truncate_words(20) %></p>
+            <p class="card-dragon-description">
+              <%= dragon.description.truncate_words(20) %></p>
             <ul class="card-dragon-attributes">
               <li>
+                <i class="fas fa-exclamation-circle"></i>
                 <%= dragon.describe_temperament %>
               </li>
               <li>
+                <i class="fas fa-fire"></i>
+                <% if dragon.fire == true %>
+                  Pyromaniac
+                <% else %>
+                  No fire
+                <% end %>
+              </li>
+              <li>
+                <i class="fab fa-wolf-pack-battalion"></i>
                 <%= dragon.describe_size %>
               </li>
             </ul>
-            <h4 class="card-dragon-price">
+            <h4 class="card-dragon-price-index">
               <%= "#{dragon.price} $/day"%>
             </h4>
             <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
@@ -52,13 +63,23 @@
             <p class="card-dragon-description"><%= dragon.description.truncate_words(20) %></p>
             <ul class="card-dragon-attributes">
               <li>
+                <i class="fas fa-exclamation-circle"></i>
                 <%= dragon.describe_temperament %>
               </li>
               <li>
+                <i class="fas fa-fire"></i>
+                <% if dragon.fire == true %>
+                  Pyromaniac
+                <% else %>
+                  No fire
+                <% end %>
+              </li>
+              <li>
+                <i class="fab fa-wolf-pack-battalion"></i>
                 <%= dragon.describe_size %>
               </li>
             </ul>
-            <h4 class="card-dragon-price">
+            <h4 class="card-dragon-price-index">
               <%= "#{dragon.price} €/day"%>
             </h4>
             <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
