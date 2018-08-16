@@ -5,18 +5,20 @@ class DragonsController < ApplicationController
   def index
 
 
-    # if params[:query].present?
-      @dragons = Dragon.where.not(latitude: nil, longitude: nil)
+
+    if params[:query].present?
+      @dragons = Dragon.where("address ILIKE?", latitude: nil, longitude: nil)
+      # @dragons = Dragon.where.not("address ILIKE?", latitude: nil, longitude: nil)
       @markers = @dragons.map do |flat|
         {
           lat: flat.latitude,
-        lng: flat.longitude#,
+         lng: flat.longitude
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
         }
-      # end
-      # @query = params[:query]
-    # else
-    #   @dragons = Dragon.all
+      end
+      @query = params[:query]
+    else
+      @dragons = Dragon.all
     end
   end
 

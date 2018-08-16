@@ -1,7 +1,7 @@
 <div class="home-banner" style="background-image: linear-gradient(-225deg, rgba(135,48,0,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'harry_potter.jpg' %>');">
-  <div class="container">
+  <div class="container booking-container-confirmed">
 
-      <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="show-booking-content">
         <div class="show-booking-heading">
           <i class="show-booking-icon fas fa-check-circle"></i>
           <h2>Your booking for <%= @dragon.name %>:</h2>
@@ -9,9 +9,9 @@
       </div>
 
     <div class="booking-container">
-    <div class="card-dragon-whole">
+    <div class="card-dragon-whole-booking">
       <div class="card-dragon-booking" style="background-image: url(<%= @dragon.photo_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-        <%= link_to "", dragon_path(@dragon), class: "card-dragon-link" %>
+        <%= link_to "", dragon_path(@dragon), class: "card-dragon-link-bookings" %>
       </div>
     </div>
 
@@ -20,14 +20,14 @@
           <div class="show-booking-group">
             <h4>From: <%= @booking.start_date %></h4>
             <h4>for <%= @booking.total_duration %> days</h4>
-            <h4>In <%= @booking.dragon.location %></h4>
+            <h4>In <%= @booking.dragon.address %></h4>
             <h4>Status: <%= @booking.status %></h4>
             <h4>Total: <%= @booking.total_price %>€</h4>
           </div>
         </div>
         <div class="show-booking-bottom">
-          <%= link_to "Manage my bookings", profile_path(current_user), class: "button-white booking-confirm-button" %>
-          <%= link_to "Back to #{@booking.dragon.name}", dragon_path(@dragon), class: "button-white booking-confirm-button"%>
+          <%= link_to "Manage my bookings", profile_path(current_user), class: "button-white booking-manage-button edit-button-booking" %>
+          <%= link_to "Back to #{@booking.dragon.name}", dragon_path(@dragon), class: "button-white booking-return-button edit-button-booking"%>
         </div>
       </div>
 

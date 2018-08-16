@@ -1,21 +1,33 @@
 .show-booking-details{
   border: 1px solid #e4e4e4;
-  border-radius: 3px;
-  padding: 10px;
+  border-radius: 1px;
   background-color: #F1F1F1;
   height: 300px;
-  width: 100%;
+  width: 120%;
   color: #484848;
   margin-top: 100px;
   margin-bottom: 50px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
 }
+
+.card-dragon-whole-booking {
+  width: 68%;
+  position: relative;
+  border: 1px solid #e4e4e4;
+  margin-top: 15px;
+  margin-left: 0px;
+  z-index: 3;
+  transform: translate(30px, 10px);
+  box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
+}
+
 .show-booking-icon{
-font-size: 52px;
-color: lightgreen;
-margin: 10px;
+  font-size: 52px;
+  color: lightgreen;
+  margin: 10px;
 }
 .show-booking-heading{
   text-align: center;
@@ -24,44 +36,63 @@ margin: 10px;
   text-align: center;
   margin-top: 20px;
 }
- .booking-confirm-button {
-  margin-top: 20px;
- }
+.booking-return-button {
+  position: absolute;
+  bottom: -80px;
+  right: -10px;
+}
+
+.booking-manage-button {
+  position: absolute;
+  bottom: -80px;
+  right: 290px;
+}
+
+.edit-button-booking {
+text-decoration: none;
+color: white;
+}
+
+.edit-button-booking:hover {
+text-decoration: none;
+color: #333333;
+}
 
 .show-booking-group {
   margin-right: 50px;
-text-align: left;
+  text-align: left;
 }
 
 .booking-box-container {
   width: 80%;
+  z-index: 2;
+  transform: translate(-285px, 10px);
 }
 
 .booking-container {
   display: flex;
   width: 100%;
+  margin-top: -25px;
 }
 
-.show-booking-details {
-  z-index: 2;
-  transform: translate(-285px, 10px);
-  width: 110%;
-  background-color: #F1F1F1;
-}
+// .show-booking-details {
+//   background-color: #F1F1F1;
+//
+// }
 
 .show-booking-heading {
+    margin-top: -80px;
+
   h2 {
     font-size: 40px;
+
   }
 }
 
 .card-dragon-booking {
-  position: relative;
-  border: 1px solid #e4e4e4;
+  width: 100%;
   height: 100%;
-  margin-top: 15px;
-  margin-left: 0px;
-  z-index: 2;
-  transform: translate(200px, 10px);
-  box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
