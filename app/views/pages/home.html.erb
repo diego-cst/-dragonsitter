@@ -1,20 +1,24 @@
 <video autoplay muted loop id="myVideo">
   <source src="http://res.cloudinary.com/dfn1yucto/video/upload/v1534435455/untitledv5.mp4">
-</video>
+  </video>
 
 
 
   <div class="home-banner-content">
-    <h1 class="home-title">Risk your life!</h1>
-    <p class="home-description">Kill time and potentially yourself by playing with fire</p>
-    <div class="home-search-form">
-      <%= form_tag dragons_path, method: :get do %>
-      <%= text_field_tag :address, params[:address], class: "input-search",
-      placeholder: "Type a location.."%>
-      <button name="button" type="submit" class="button-white">Search
-      </button>
+    <h1 class="home-title">Dragonsitter</h1>
+    <p class="home-description">The company for .... OH WOW LOOK AT THAT DRAGON!</p>
+    <div class="input-group home-search-form">
+      <%= form_tag dragons_path, method: :get, class: "form-control input-search-group" do %>
+      <%= text_field_tag :address, params[:address], class: "input-search form-control home-input-search", placeholder: "Type a location.."%>
+      <span class="input-group-btn">
+        <%= submit_tag "Search" , class: "btn button-red" %>
+      </span>
       <% end %>
     </div>
   </div>
 </div>
+
+
+
+
 

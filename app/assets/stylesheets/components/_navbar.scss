@@ -84,3 +84,35 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.input-search-group {
+  display: flex;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.nav-search-bar {
+  width: 50%;
+  border: none;
+}
+
+.input-search-navbar {
+  width: 300px !important;
+}
+
+#navbar-first-group {
+  width: 90% !important;
+  display: flex !important;
+}
+
+#nav-search-button {
+  background-color: #FF3A4E;
+  color: white;
+}
+
+#nav-search-button:hover {
+  background-color: transparent;
+  color: #A0A0A0;
+  border: 2px solid #FF3A4E;
+}
