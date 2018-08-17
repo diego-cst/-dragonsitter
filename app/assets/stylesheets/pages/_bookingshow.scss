@@ -14,6 +14,7 @@
 }
 
 .home-banner-bookings {
+  overflow-y: hidden;
   height: 100vh;
   background-size: cover !important;
 }
@@ -30,7 +31,7 @@
 
 .show-booking-icon{
   font-size: 52px;
-  color: lightgreen;
+  color: #108057 !important;
   margin: 10px;
 }
 .show-booking-heading-info{

@@ -1,10 +1,10 @@
 <div class="content">
 <!-- Changes the title of the page according to the results (with location name, or empty) -->
 <% if @query.present? && !@dragons.empty? %>
-  <h2>  <%="Dragons in \"#{@query.capitalize}\""%> </h2>
+  <h2 class="dragon-index-title"> <%="Dragons in \"#{@query.capitalize}\""%> </h2>
   <% elsif @dragons.empty? %>
   <div class="empty-search-results col-xs-12 col-md-4 col-md-offset-4">
-    <h2>No dragons here!</h2>
+    <h2 class="dragon-index-title">No dragons here!</h2>
     <%= image_tag "search.jpg" %>
   </div>
 <% end %>
@@ -21,7 +21,7 @@
               <h3 class="card-dragon-name_odd">
                 <%= dragon.name %></h3>
                 <% if dragon.owner == current_user %>
-                      <p class="disclaimer-ownership"><i class="fas fa-exclamation-circle"></i> This is your dragon !</p>
+                      <p class="disclaimer-ownership">Your Dragon</p>
                 <% end %>
               <p class="card-dragon-description">
                 <%= dragon.description.truncate_words(20) %></p>
@@ -45,7 +45,7 @@
               </li>
             </ul>
             <h4 class="card-dragon-price-index">
-              <%= "#{dragon.price} $/day"%>
+              <%= "#{dragon.price} €/day"%>
             </h4>
             <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
           </div>
@@ -62,10 +62,11 @@
         <div class="card-dragon-whole-white_even">
           <div class="card-dragon-info-all">
             <div>
+
               <h3 class="card-dragon-name_even">
                 <%= dragon.name %></h3>
                 <% if dragon.owner == current_user %>
-                      <p class="disclaimer-ownership"><i class="fas fa-exclamation-circle"></i> This is your dragon !</p>
+                      <p class="disclaimer-ownership"> Your Dragon</p>
                 <% end %>
               <p class="card-dragon-description"><%= dragon.description.truncate_words(20) %></p>
             </div>

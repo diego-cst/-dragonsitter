@@ -3,6 +3,7 @@
 }
 
 .dragon-show-info-card {
+  position: relative;
   background-color: white;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -50,23 +51,28 @@
   }
 }
 
-.dragon-name-user-profile {
-  position: relative;
-
-  .avatar {
-    margin-bottom: 20px;
-    margin-top: 10px;
-    position: absolute;
-    right: 123px;
-    top: 0;
-  }
-}
-
 .dragon-show-description-field {
   width: 90%;
   margin-left: 0;
   margin-top: 15px;
   font-weight: lighter;
+}
+
+.dragon-show-owner-details {
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+  font-weight: lighter;
+  top: 27px;
+  right: 66px;
+}
+
+.dragon-show-tick {
+  color: #108057 !important;
+}
+
+.dragon-show-owner-avatar {
+  margin-bottom: 5px;
 }
 
 .booking-price {

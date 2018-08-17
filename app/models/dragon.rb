@@ -17,7 +17,10 @@ class Dragon < ApplicationRecord
   mount_uploader :photo_third, DragonPhotoUploader
 
   def markers
-    {lat: self.latitude, lng: self.longitude}
+    { lat: self.latitude,
+      lng: self.longitude,
+      icon: 'http://res.cloudinary.com/dfn1yucto/image/upload/w_60,h_60,c_scale/co_rgb:f60909,dn_299,e_colorize:56/v1534429310/pin.gif'
+    }
   end
 
   def describe_temperament
