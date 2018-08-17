@@ -5,8 +5,10 @@
 
 
   <div class="home-banner-content">
-    <h1 class="home-title">Dragonsitter</h1>
-    <p class="home-description">The company for .... OH WOW LOOK AT THAT DRAGON!</p>
+    <h1 class="home-title"><strong>Dragonsitter</strong></h1>
+    <p class="home-description">
+      <span id="banner-typed-text"></span>
+    </p>
     <div class="input-group home-search-form">
       <%= form_tag dragons_path, method: :get, class: "form-control input-search-group" do %>
       <%= text_field_tag :address, params[:address], class: "input-search form-control home-input-search", placeholder: "Type a location.."%>
