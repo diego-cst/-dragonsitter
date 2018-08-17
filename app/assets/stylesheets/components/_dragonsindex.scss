@@ -33,10 +33,12 @@
   position: relative;
   box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
   transition: all .9s ease-in-out;
+
 }
 
 .card-dragon-whole:hover {
   transform: scale(1.1);
+  overflow: hidden;
 }
 
 .card-dragon-whole-white_odd {
@@ -79,18 +81,18 @@
 }
 
 .disclaimer-ownership {
-  text-align: center;
-  font-size: 12px;
-  font-size: extra-light;
-  color: #108057;
+  // text-align: center;
+  // font-size: 12px;
+  // font-size: extra-light;
   // background-color: #108057;
-  padding: 2px 4px;
-  border: 1px solid green;
-  border-radius: 8px;
+  // padding: 2px 4px;
+  // border: 1px solid green;
+  // border-radius: 8px;
   position: absolute;
   left: 12px;
-  top: 0px;
+  top: -6px;
   margin-top: 2px;
+  font-size: 25px;
 }
 
 .card-dragon-name_odd {
