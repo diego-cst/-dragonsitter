@@ -67,7 +67,7 @@ Dragon.create!([
     price: 50,
     user_id: 2,
     description: "The Chinese Fireball, also known as the Liondragon, is a dragon native to China. It is a brilliant red and gold dragon, named for the rounded balls of flame that shoot from its nostrils. The Fireball is scarlet and smooth scaled with a fringe of golden spikes around its snub-snouted face and extremely protuberant eyes. They weigh between two and four tons. Its name is derived from the mushroom-shaped flame that comes from its nostrils when angered, along with the large mushroom-shaped flame it shoots from its mouth.",
-    remote_photo_first_url: "http://res.cloudinary.com/dfn1yucto/image/upload/c_imagga_crop/v1534436859/dragon1.jpg",
+    remote_photo_first_url: "http://res.cloudinary.com/dfn1yucto/image/upload/v1534436859/dragon1.jpg",
     remote_photo_second_url: "http://res.cloudinary.com/dfn1yucto/image/upload/v1534436858/dragon2.jpg",
     remote_photo_third_url: "http://res.cloudinary.com/dfn1yucto/image/upload/v1534436857/dragon3.jpg"
   },

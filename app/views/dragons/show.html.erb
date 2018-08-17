@@ -7,8 +7,14 @@
       <div class="dragon-show-info-card col-xs-12 col-md-8">
         <div class="dragon-name-user-profile">
           <h3><%= @dragon.name %></h3>
-          <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar' %>
-          <p> <strong class="owner-name-dragon"> <%= @dragon.owner.name %></strong>'s  Dragon</p>
+
+          <div class="dragon-show-owner-details">
+            <div class="dragon-show-owner-avatar">
+              <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar dragon-show-avatar' %>
+            </div>
+            <strong class="owner-name-dragon"> <%= @dragon.owner.name %></strong>
+          </div>
+
         </div>
 
         <p class="dragon-show-address"><%= @dragon.address %> </p>
@@ -29,7 +35,7 @@
               <%= @dragon.describe_size %></li>
             </ul>
 
-            <p class="dragon-show-description-field"><%= @dragon.description %></p>
+            <p class="dragon-show-description-field"><%= @dragon.description %> </p>
           </div>
 
           <div class="booking-box col-xs-12 col-md-4">
