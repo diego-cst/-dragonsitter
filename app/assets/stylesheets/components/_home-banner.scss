@@ -55,17 +55,35 @@
   box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
 }
 
+
+// OLD SET UP DISPLAY VIDEO
+// #myVideo {
+//   left: -10%;
+//   min-width: 100%;
+//   min-height: 100%;
+//   position: fixed;
+//   color: white;
+//   text-align: center;
+//   display: flex;
+//   align-content: center;
+//   justify-content: center;
+//   z-index:0;
+// }
+
 #myVideo {
-  left: -10%;
-  min-width: 100%;
-  min-height: 100%;
-  position: fixed;
-  color: white;
-  text-align: center;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  z-index:0;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   transform: translateX(-50%) translateY(-50%);
+   z-index: 0;
+   text-align: center;
+   display: flex;
+   align-content: center;
+   justify-content: center;
 }
 
 .home-title {
