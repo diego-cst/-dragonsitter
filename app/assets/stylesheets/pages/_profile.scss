@@ -201,14 +201,30 @@
 }
 
 .message-buttons .btn {
-  background-color: gray;
+  background-color: #7B7B7B;
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 3px;
   color: white;
-  border: solid 1px black;
+  border: solid 1px #7B7B7B;
   font-size: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: lighter;
+  box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
   &:hover {
-    background-color: blue;
+    background-color: #008C96;
+  }
+}
+
+#button-decline {
+  background-color: transparent;
+  border: solid 1px #7B7B7B;
+  color: #7B7B7B;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    background-color: #FF0036;
+    color: white;
   }
 }
 

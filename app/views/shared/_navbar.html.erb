@@ -20,7 +20,7 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "Dragons", dragons_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "All dragons", dragons_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% if user_signed_in? %>
 
@@ -67,7 +67,7 @@
           <%= link_to 'My profile', profile_path(current_user) %></a>
           <% end %>
         </li>
-        <li><%= link_to 'Dragons', dragons_path %></li>
+        <li><%= link_to 'All dragons', dragons_path %></li>
       </ul>
     </div>
   </div>
