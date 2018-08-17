@@ -12,12 +12,14 @@
   font-weight: lighter;
   padding: 8px;
   color: #333333;
+  box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
 }
 
 .button-grey:hover {
   background-color: white;
   background-color: #333333;
   color: white;
+  box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
   .edit-button {
     color: white;
   }
@@ -33,5 +35,29 @@
   color: white;
 
 }
+
+.button-red {
+  background-color: #FF3A4E;
+  color: white;
+  border: 1px solid #FF3A4E;
+  text-align: center;
+  text-decoration: none;
+  width: 250px;
+  margin: 20px 12px 0 0px;
+  transition: all .5s;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: lighter;
+  padding: 8px;
+  box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
+}
+
+.button-red:hover {
+  background-color: transparent;
+  border: 3px solid #FF3A4E;
+  color: #102027;
+  box-shadow: 0 4px 10px 1px rgba(0,0,0,.06), 0 3px 8px 1px rgba(0,0,0,.16);
+}
+
 
 
