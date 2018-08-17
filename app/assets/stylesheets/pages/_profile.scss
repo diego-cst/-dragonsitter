@@ -211,3 +211,13 @@
     background-color: blue;
   }
 }
+
+.nav-tabs > li > a {
+  color: #4C4C4C;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #00888C
+}

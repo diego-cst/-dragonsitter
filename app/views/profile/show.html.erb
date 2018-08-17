@@ -1,123 +1,132 @@
 <!-- NOTE: this page is diplayed as a grid -->
-<div class="container">
-  <h1>My profile</h1>
+<div class="wrapper-grey">
+  <div class="container">
 
-  <div class="grid">
-    <div class="user-info">
-      <!-- USER AVATAR -->
-      <%= cl_image_tag @user.photo_url, class: 'avatar-large' %>
+    <h1>My profile</h1>
 
-      <div class="space-between"></div>
+    <div class="grid">
+      <div class="user-info">
+        <!-- USER AVATAR -->
+        <%= cl_image_tag @user.photo_url, class: 'avatar-large' %>
 
-      <!-- USER INFO -->
-      <p><%= @user.name %></p>
-      <p><%= @user.email %></p>
+        <div class="space-between"></div>
 
-      <button name="button" type="submit" class="button-grey"><%= link_to 'Edit my profile', edit_user_registration_path, class: "edit-button"  %></button>
-    </div>
+        <!-- USER INFO -->
+        <p><%= @user.name %></p>
+        <p><%= @user.email %></p>
 
-    <div class="user-message" style="overflow-y:scroll;">
-      <h3>Messages (<%= @requests_received.length + @requests_sent.length %>)</h3>
+  <!--       class="button-grey" -->
 
-      <div class="box-tab">
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#received" aria-controls="received" role="tab" data-toggle="tab">Received</a></li>
-          <li role="presentation"><a href="#sent" aria-controls="sent" role="tab" data-toggle="tab">Sent</a></li>
-      </ul>
-
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="received"><%= render 'request_received/received', request_received: @requests_received %></div>
-        <div role="tabpanel" class="tab-pane" id="sent"><%= render 'request_sent/sent', requests_sent: @requests_sent %></div>
+        <button name="button" type="submit" class="search-field-profile"><%= link_to 'Edit my profile', edit_user_registration_path, class: "btn button-grey"  %>
+        </button>
       </div>
+
+      <div class="user-message" style="overflow-y:scroll;">
+        <h3>Requests (<%= @requests_received.length + @requests_sent.length %>)</h3>
+
+
+
+        <div class="box-tab">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#received" aria-controls="received" role="tab" data-toggle="tab">Received</a></li>
+            <li role="presentation"><a href="#sent" aria-controls="sent" role="tab" data-toggle="tab">Sent</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="received"><%= render 'request_received/received', request_received: @requests_received %></div>
+          <div role="tabpanel" class="tab-pane" id="sent"><%= render 'request_sent/sent', requests_sent: @requests_sent %></div>
+        </div>
+        </div>
       </div>
-    </div>
 
-    <div class="user-owned-dragons", style="overflow-y:scroll;">
+      <div class="user-owned-dragons", style="overflow-y:scroll;">
 
-      <div class="user-owned-dragons-heading">
-        <h3>My dragons</h3>
-        <%= link_to 'Add a new dragon', new_dragon_path, class: 'edit-button button-grey'  %>
-      </div>
-      <% if !@owned_dragons.empty? %>
+        <div class="user-owned-dragons-heading">
+          <h3>My dragons</h3>
+          <button class="search-field-profile"> <%= link_to 'Add a new dragon', new_dragon_path, class: 'btn button-grey'  %>
+          </button>
+        </div>
+        <% if !@owned_dragons.empty? %>
 
-      <div class="row">
-        <% @owned_dragons.each do |dragon| %>
-        <div class="col-xs-12 col-md-3">
-          <div class="card" style="background-image: url(<%= dragon.photo_first_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-            <h2 class="card-dragon-name">
-              <%= dragon.name %>
-            </h2>
-            <ul class="card-dragon-attributes">
-              <li>
-                <%= dragon.describe_temperament %>
-              </li>
-              <li>
-                <%= dragon.describe_size %>
-              </li>
-            </ul>
-            <div class="dragon-edit">
-              <%= link_to raw("<i class='fas fa-pencil-alt'></i>"), edit_dragon_path(dragon)  %>
+        <div class="row">
+          <% @owned_dragons.each do |dragon| %>
+          <div class="col-xs-12 col-md-3">
+            <div class="card" style="background-image: url(<%= dragon.photo_first_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+              <h2 class="card-dragon-name">
+                <%= dragon.name %>
+              </h2>
+              <ul class="card-dragon-attributes">
+                <li>
+                  <%= dragon.describe_temperament %>
+                </li>
+                <li>
+                  <%= dragon.describe_size %>
+                </li>
+              </ul>
+              <div class="dragon-edit">
+                <%= link_to raw("<i class='fas fa-pencil-alt'></i>"), edit_dragon_path(dragon)  %>
+              </div>
+              <div class="dragon-delete">
+                <%= link_to dragon_path(dragon), method: :delete, data: { confirm: "Are you sure?"} do %>
+                <i class="fa fa-trash destroy_dose"></i>
+                <% end %>
+              </div>
+              <h4 class="card-dragon-price">
+                <%= "#{dragon.price} $/day"%>
+              </h4>
+              <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
             </div>
-            <div class="dragon-delete">
-              <%= link_to dragon_path(dragon), method: :delete, data: { confirm: "Are you sure?"} do %>
-              <i class="fa fa-trash destroy_dose"></i>
-              <% end %>
-            </div>
-            <h4 class="card-dragon-price">
-              <%= "#{dragon.price} $/day"%>
-            </h4>
-            <%= link_to "", dragon_path(dragon), class: "card-dragon-link" %>
           </div>
+
+          <% end %>
         </div>
 
+        <% else %>
+        <p>You don't have any dragon</p>
         <% end %>
       </div>
 
-      <% else %>
-      <p>You don't have any dragon</p>
-      <% end %>
-    </div>
+      <div class="user-bookings" style="overflow-x:scroll;">
+        <h3>My bookings</h3>
 
-    <div class="user-bookings" style="overflow-y:scroll;">
-      <h3>My bookings</h3>
+        <% if !@bookings.empty? %>
 
-      <% if !@bookings.empty? %>
-
-      <div class="row">
-        <% @bookings.each do |booking| %>
-        <div class="col-xs-12 col-md-3">
-          <div class="card" style="background-image: url(<%= booking.dragon.photo_first_url %>)">
-            <h2 class="card-dragon-name">
-              <%= booking.dragon.name %>
-            </h2>
-            <ul class="card-dragon-attributes">
-              <li>
-                <%= booking.total_duration %> days
-              </li>
-              <li>
-                in <%= booking.dragon.address %>
-              </li>
-            </ul>
-            <div class="booking-delete">
-              <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} do %>
-              <i class="fa fa-trash destroy_dose"></i>
-              <% end %>
+        <div class="row">
+          <% @bookings.each do |booking| %>
+          <div class="col-xs-12 col-md-3">
+            <div class="card" style="background-image: url(<%= booking.dragon.photo_first_url %>)">
+              <h2 class="card-dragon-name">
+                <%= booking.dragon.name %>
+              </h2>
+              <ul class="card-dragon-attributes">
+                <li>
+                  <%= booking.total_duration %> days
+                </li>
+                <li>
+                  in <%= booking.dragon.address %>
+                </li>
+              </ul>
+              <div class="booking-delete">
+                <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} do %>
+                <i class="fa fa-trash destroy_dose"></i>
+                <% end %>
+              </div>
+              <h4 class="card-dragon-price">
+                <%= booking.total_price%>€
+              </h4>
+              <div class="card-booking-status">
+              <i class="fas fa-circle" style="color: <%= booking.status_color %>;"> </i>
+              </div>
+                <%= link_to "", dragon_booking_path(booking.dragon, booking), class: "card-dragon-link" %>
             </div>
-            <h4 class="card-dragon-price">
-              <%= booking.total_price%>€
-            </h4>
-            <div class="card-booking-status">
-            <i class="fas fa-circle" style="color: <%= booking.status_color %>;"> </i>
-            </div>
-              <%= link_to "", dragon_booking_path(booking.dragon, booking), class: "card-dragon-link" %>
           </div>
+          <% end %>
         </div>
+
+        <% else %>
+        <p>You don't have any booking</p>
         <% end %>
       </div>
-
-      <% else %>
-      <p>You don't have any booking</p>
-      <% end %>
     </div>
   </div>
 </div>
