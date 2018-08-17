@@ -12,7 +12,7 @@
             <div class="dragon-show-owner-avatar">
               <%= cl_image_tag @dragon.owner.photo_url, class: 'avatar dragon-show-avatar' %>
             </div>
-            <strong class="owner-name-dragon"> <%= @dragon.owner.name %></strong>
+            <strong class="owner-name-dragon"> <%= @dragon.owner.name %></strong>'
           </div>
 
         </div>
@@ -41,7 +41,7 @@
           <div class="booking-box col-xs-12 col-md-4">
             <% if current_user && @dragon.booked_by?(current_user) %>
             <div class="dragon-show-confirmation">
-              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-check-circle dragon-show-tick"></i>
             </div>
             You already have a booking for <%= @dragon.name %>
             for <%=@booking.total_duration%> days
